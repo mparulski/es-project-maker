@@ -1,0 +1,22 @@
+{
+  "name": "@mparulski/es-project-maker",
+  "version": "0.1.0",
+  "description": "Common scripts for projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello-world": "echo \"Hello World\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mparulski/es-project-maker.git"
+  },
+  "author": "Michal Parulski <michal.parulski@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mparulski/es-project-maker/issues"
+  },
+  "homepage": "https://github.com/mparulski/es-project-maker#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
