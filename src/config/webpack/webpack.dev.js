@@ -1,7 +1,6 @@
 const path = require('path')
+const defaultConfig = require('./defaultConfig')
 
-module.exports = {
-    entry: {
-        main: path.resolve(__dirname, './src/index.js'),
-    },
-}
+module.exports = (config = defaultConfig) => ({
+    entry: config.entry,
+})
