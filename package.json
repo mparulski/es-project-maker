@@ -17,8 +17,16 @@
   },
   "homepage": "https://github.com/mparulski/es-project-maker#readme",
   "dependencies": {
-    "webpack": "^5.24.2",
-    "webpack-cli": "^4.5.0"
+    "@babel/cli": "7.13.10",
+    "@babel/core": "7.13.10",
+    "@babel/plugin-transform-arrow-functions": "7.13.0",
+    "@babel/plugin-transform-modules-commonjs": "7.13.8",
+    "@babel/preset-env": "7.13.10",
+    "@babel/runtime": "7.13.10",
+    "deepmerge": "4.2.2",
+    "source-map-loader": "2.0.1",
+    "webpack": "5.24.3",
+    "webpack-cli": "4.5.0"
   },
   "devDependencies": {}
 }
