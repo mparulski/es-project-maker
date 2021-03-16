@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/mparulski/es-project-maker.git"
   },
+  "bin": {
+    "es-project-maker": "bin/es-project-maker.js"
+  },
   "author": "Michal Parulski <michal.parulski@gmail.com>, Jan Latoch <jan.latoch@gmail.com>",
   "license": "MIT",
   "bugs": {
