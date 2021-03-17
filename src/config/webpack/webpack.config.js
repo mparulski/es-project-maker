@@ -39,7 +39,7 @@ const baseConfig = (env, config) => {
         stats: {
             colors: true
         },
-        devtool: "source-map"
+        devtool: "eval-source-map"
     }
 }
 
