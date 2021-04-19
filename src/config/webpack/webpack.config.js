@@ -7,7 +7,7 @@ const defaultConfig = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "index.js",
+        filename: "index.bundle.js",
         libraryTarget: "commonjs2",
     }
 }

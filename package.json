@@ -1,6 +1,6 @@
 {
   "name": "@mparulski/es-project-maker",
-  "version": "0.1.0",
+  "version": "0.0.1-alpha.1",
   "description": "Common scripts for projects",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "es-project-maker": "bin/es-project-maker.js"
   },
   "author": "Michal Parulski <michal.parulski@gmail.com>, Jan Latoch <jan.latoch@gmail.com>",
+  "contributors": ["Jan Latoch <jan.latoch@gmail.com>"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mparulski/es-project-maker/issues"
