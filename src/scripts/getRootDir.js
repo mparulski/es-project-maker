@@ -1,4 +1,4 @@
-fs = require('fs');
+const fs = require('fs');
 const path = require('path')
 
 const PACKAGE_JSON_FILE_NAME = 'package.json'
@@ -13,7 +13,7 @@ const isRootFile = (fileDir) => {
 }
 
 const getRoot = (currentPath) => {
-    const hasPackageJsonFile = fs.existsSync(currentPath + '/' + PACKAGE_JSON_FILE_NAME)
+    const hasPackageJsonFile = fs.existsSync(currentPath + path.sep + PACKAGE_JSON_FILE_NAME)
 
     if (hasPackageJsonFile && isRootFile(path.resolve(currentPath, PACKAGE_JSON_FILE_NAME))) {
         return currentPath
@@ -29,7 +29,9 @@ const getRoot = (currentPath) => {
         process.exit(1)
     }
 
-    getRoot(path.resolve(currentPath, '..'))
+    return getRoot(path.resolve(currentPath, '..'))
 }
 
-return getRoot(scriptPath)
+const getRootDir = () => getRoot(scriptPath)
+
+module.exports = getRootDir

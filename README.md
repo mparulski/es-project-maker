@@ -1,10 +1,6 @@
 # es-project-maker
 
-## How to run webpack
+## How to run 
 ```
-const webpackConfig = require("es-project-maker/src/config/webpack/webpack.config")
-
-webpackConfig({
-    mode: "development"
-})()
+npx @mparulski/es-project-maker --config=config/application.config.dev.json
 ```
