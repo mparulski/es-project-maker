@@ -4,9 +4,8 @@
 const fs = require('fs');
 const args = require('minimist')(process.argv.slice(2))
 
-const [executor, ignoredBin, script] = process.argv;
-
-const runWebpack = require('../src/scripts/runWebpack')
+const buildBabel = require('../src/scripts/builders/buildBabel')
+const buildWebpack = require('../src/scripts/builders/buildWebpack')
 
 if (args['config'] === undefined || args['config'] === null || !fs.existsSync(args['config'])) {
     console.error(
@@ -20,6 +19,7 @@ if (args['config'] === undefined || args['config'] === null || !fs.existsSync(ar
 
 const applicationConfig = JSON.parse(fs.readFileSync(args['config']))
 
-runWebpack(applicationConfig)
+buildBabel(applicationConfig)
+buildWebpack(applicationConfig)
 
 process.exit(0)
