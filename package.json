@@ -1,6 +1,6 @@
 {
   "name": "@mparulski/es-project-maker",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "Common scripts for projects",
   "main": "index.js",
   "scripts": {
@@ -14,22 +14,24 @@
     "es-project-maker": "bin/es-project-maker.js"
   },
   "author": "Michal Parulski <michal.parulski@gmail.com>, Jan Latoch <jan.latoch@gmail.com>",
-  "contributors": ["Jan Latoch <jan.latoch@gmail.com>"],
+  "contributors": [
+    "Jan Latoch <jan.latoch@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mparulski/es-project-maker/issues"
   },
   "homepage": "https://github.com/mparulski/es-project-maker#readme",
   "dependencies": {
-    "@babel/cli": "7.13.14",
-    "@babel/core": "7.13.15",
+    "@babel/cli": "7.13.16",
+    "@babel/core": "7.13.16",
     "@babel/plugin-transform-arrow-functions": "7.13.0",
     "@babel/plugin-transform-modules-commonjs": "7.13.8",
-    "@babel/preset-env": "7.13.10",
-    "@babel/runtime": "7.13.10",
+    "@babel/preset-env": "7.13.15",
+    "@babel/runtime": "7.13.17",
     "deepmerge": "4.2.2",
     "source-map-loader": "2.0.1",
-    "webpack": "5.33.2",
+    "webpack": "5.36.1",
     "webpack-cli": "4.6.0"
   },
   "devDependencies": {}
