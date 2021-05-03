@@ -1,6 +1,5 @@
 const webpack = require("webpack")
 const path = require("path")
-const merge = require("webpack-merge")
 
 module.exports = {
     target: "web",
@@ -18,14 +17,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$|\.jsx$/,
-                exclude: /node_modules/,
+                test: "/\.js$|\.jsx$/",
+                exclude: "/node_modules/",
                 use: {
                     loader: "babel-loader",
                 }
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif|woff|eot|ttf)$/i,
+                test: "/\.(png|svg|jpg|jpeg|gif|woff|eot|ttf)$/i",
                 type: 'asset/inline',
             }
         ]

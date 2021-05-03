@@ -2,45 +2,20 @@ const merge = require("deepmerge")
 const path = require("path")
 const webpack = require("webpack")
 
-const defaultConfig = {
+module.exports = {
+    target: "web",
     mode: "none",
     entry: "./src/index.js",
+    resolve: {
+        extensions: ["*", ".js"]
+    },
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "index.bundle.js",
         libraryTarget: "commonjs2",
-    }
+    },
+    stats: {
+        colors: true
+    },
+    devtool: "eval-source-map"
 }
-
-const baseConfig = (env, config) => {
-    const userConfig = merge(defaultConfig, config)
-
-    return {
-        target: "web",
-        mode: config.mode,
-        entry: config.entry,
-        module: {
-            rules: [
-                {
-                    test: /\.(js|mjs)$/,
-                    exclude: /node_modules/,
-                    use: [
-                        "babel-loader",
-                        "source-map-loader"
-                    ],
-                    enforce: "pre"
-                }
-            ]
-        },
-        resolve: {
-            extensions: ["*", ".js"]
-        },
-        output: config.output,
-        stats: {
-            colors: true
-        },
-        devtool: "eval-source-map"
-    }
-}
-
-module.exports = config => env => baseConfig(env, config)

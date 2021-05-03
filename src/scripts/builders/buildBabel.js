@@ -1,7 +1,7 @@
 const logger = require("../utils/logger")
 const touch = require("../utils/touchProjectConfig")
 
-const babelDefaultConfig = require("../../config/babel/babel.default.config")
+const babelDefaultConfig = require("../../config/babel/babel.config")
 
 const CONFIG_FILENAME = "babel.config.js"
 

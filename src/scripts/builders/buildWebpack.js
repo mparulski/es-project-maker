@@ -1,6 +1,8 @@
 const touch = require("../utils/touchProjectConfig")
+const merge = require("deepmerge")
 
-const baseConfig = require('@mparulski/es-project-maker/src/config/webpack/webpack.config');
+const baseConfig = require('../../config/webpack/webpack.config');
+const devConfig = require('../../config/webpack/webpack.dev.config');
 
 const CONFIG_FILENAME = "webpack.config.js"
 
@@ -9,9 +11,12 @@ const buildWebpack = (applicationConfig) => {
         return
     }
 
-    const computedConfig = baseConfig(applicationConfig["webpack"]["config"])()
+    const appConfig = applicationConfig["webpack"]["config"]
 
-    touch(CONFIG_FILENAME, computedConfig);
+    const baseDevConfig = merge(baseConfig, devConfig)
+
+    const finalConfig = merge(baseDevConfig, appConfig)
+    touch(CONFIG_FILENAME, finalConfig);
 }
 
 module.exports = buildWebpack
