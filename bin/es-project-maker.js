@@ -2,10 +2,11 @@
 'use strict';
 
 const fs = require('fs');
+
 const args = require('minimist')(process.argv.slice(2))
 
-const buildBabel = require('../src/scripts/builders/buildBabel')
-const buildWebpack = require('../src/scripts/builders/buildWebpack')
+const buildBabel = require('../src/scripts/builders/buildBabel');
+const buildWebpack = require('../src/scripts/builders/buildWebpack');
 
 if (args['config'] === undefined || args['config'] === null || !fs.existsSync(args['config'])) {
     console.error(
