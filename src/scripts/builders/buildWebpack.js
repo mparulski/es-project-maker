@@ -6,7 +6,7 @@ const devConfig = require('../../config/webpack/webpack.dev.config');
 
 const CONFIG_FILENAME = "webpack.config.js"
 
-const buildWebpack = (applicationConfig) => {
+const buildWebpack = (applicationConfig, options) => {
     if (!applicationConfig["webpack"]["enable"]) {
         return
     }
