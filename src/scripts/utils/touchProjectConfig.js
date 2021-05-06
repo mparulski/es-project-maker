@@ -1,12 +1,10 @@
-const path = require("path")
 const touch = require("./touch")
 
-const touchProjectConfig = (fileName, fileContent) => {
-    const applicationRootPath = require("./getRootDir")()
+const touchProjectConfig = (file, fileContent) => {
     const content = ("module.exports = " + JSON.stringify(fileContent, null, 2));
 
     touch({
-        file: applicationRootPath + path.sep + fileName,
+        file,
         content});
 
     return content

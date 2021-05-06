@@ -17,7 +17,7 @@ function init(projectConfig, options) {
 
     options = {
         ...options,
-        projectRootDir: require('./utils/getRootDir')(),
+        projectRootDir: process.cwd(),
         isReact: isEnabled(projectConfig[CONFIG_OPTIONS.REACT]),
         isWebpack: isEnabled(projectConfig[CONFIG_OPTIONS.WEBPACK])
     }
