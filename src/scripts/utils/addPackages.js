@@ -3,9 +3,9 @@
 const spawn = require('./spawn');
 const logger = require('./logger')
 
-function addPackage(packages, additionalArgs = ['--save-prod'], verbose = false) {
+function addPackages(packages, additionalArgs = ['--save-prod'], verbose = false) {
     const command = 'npm';
-    const baseArgs = ['install', '--save', '--save-exact', verbose && '--verbose'].filter(e => e);
+    const baseArgs = ['install', '--save-exact', verbose && '--verbose'].filter(e => e);
     const args = baseArgs.concat(additionalArgs).concat(packages);
     const proc = spawn.sync(command, args, { stdio: 'inherit' });
 
@@ -17,4 +17,4 @@ function addPackage(packages, additionalArgs = ['--save-prod'], verbose = false)
 
 
 
-module.exports = addPackage;
+module.exports = addPackages;

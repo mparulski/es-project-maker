@@ -8,7 +8,15 @@ We don't really plan on documenting or testing it well because it's specific to 
 npx @mparulski/es-project-maker --config=config/application.config.dev.json
 ```
 
-```json
+### args
+| arg | desc |
+|-----|------|
+| --config  | path to project global configuration |
+| --verbose | would really be useful to enable end users to diagnose their own issues |
+
+### project config
+
+```
 {
   "babel": {
     // babel is always on and generates configuration
@@ -18,6 +26,13 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
     "plugins": [
       ... // it will be concatenated to the base plugins
     ],
+  },
+  react: {
+    "enable": true, 
+    /* if set to `true` then:  
+     * - install dependencies and add dependencies to package.json/package-lock.json
+     * - enables New JSX Transform in babel configuration
+    */
   },
   "webpack": {
     "enable": true,

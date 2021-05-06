@@ -21,11 +21,10 @@ const getRoot = (currentPath) => {
 
     if (currentPath === path.resolve(currentPath, '..')) {
         console.error(
-            '\x1b[31m',
             'Can\'t be found application root dir!\n',
             '\x1b[33m',
-            'Probably the application does not have package.json file created or the application package.json file does not have the property \'"applicationRootDir" : true\'',
-            '\x1b[0m')
+            'Probably the application does not have package.json file created or the application package.json file does not have the property \'"applicationRootDir" : true\''
+        )
         process.exit(1)
     }
 
