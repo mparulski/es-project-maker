@@ -49,8 +49,8 @@ function addDependencies(options) {
 }
 
 function babel(config, options) {
-    createConfig(config, options)
     addDependencies(options)
+    createConfig(config, options)
 }
 
 module.exports = babel

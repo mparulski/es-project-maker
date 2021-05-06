@@ -1,6 +1,6 @@
 {
   "name": "@mparulski/es-project-maker",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "Common scripts for projects",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
   "homepage": "https://github.com/mparulski/es-project-maker#readme",
   "dependencies": {
     "cross-spawn": "7.0.3",
-    "deepmerge": "4.2.2"
+    "deepmerge": "4.2.2",
+    "minimist": "^1.2.5"
   },
   "devDependencies": {}
 }
