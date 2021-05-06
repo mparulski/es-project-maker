@@ -2,6 +2,7 @@ const babelPackages = require('../packages/babel');
 const addPackages = require('./utils/addPackages');
 const logger = require("./utils/logger");
 const merge = require("deepmerge")
+const path = require("path")
 const touch = require("./utils/touchProjectConfig");
 
 const babelDefaultConfig = require("../config/babel/babel.config");
@@ -28,7 +29,7 @@ function createConfig(config, options) {
         babelConfig.plugins = babelConfig.plugins.concat(projectBabelConfig["plugins"])
     }
 
-    const content = touch(CONFIG_FILENAME, babelConfig);
+    const content = touch(options.projectRootDir + path.sep + CONFIG_FILENAME, babelConfig);
     options.verbose && logger.debug(CONFIG_FILENAME, content)
 
     logger.info(CONFIG_FILENAME + " was built")
