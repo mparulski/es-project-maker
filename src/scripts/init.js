@@ -3,7 +3,6 @@
 const logger = require("./utils/logger")
 const isEnabled = require('./utils/isEnabledConfigOption')
 const buildBabel = require('./babel');
-const buildWebpack = require('./builders/buildWebpack');
 
 const CONFIG_OPTIONS = {
     BABEL: 'babel',
@@ -26,7 +25,6 @@ function init(projectConfig, options) {
     options.verbose && logger.debug('Runtime options:' + JSON.stringify(options))
 
     buildBabel(projectConfig[CONFIG_OPTIONS.BABEL], options)
-    buildWebpack(projectConfig, options)
 }
 
 module.exports = init
