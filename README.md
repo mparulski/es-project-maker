@@ -5,6 +5,10 @@ We don't really plan on documenting or testing it well because it's specific to 
 
 ## How to run 
 ```
+npx @mparulski/es-project-maker --config=<path_to_project_config>
+```
+eg.
+```
 npx @mparulski/es-project-maker --config=config/application.config.dev.json
 ```
 
