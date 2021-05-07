@@ -1,3 +1,5 @@
+'use strict';
+
 const babelPackages = require('../packages/babel');
 const addPackages = require('./utils/addPackages');
 const logger = require("./utils/logger");
