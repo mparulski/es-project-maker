@@ -27,5 +27,7 @@
     "deepmerge": "4.2.2",
     "minimist": "^1.2.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "2.2.1"
+  }
 }
