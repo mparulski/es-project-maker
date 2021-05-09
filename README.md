@@ -23,7 +23,7 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
 ```
 {
   "babel": {
-    // babel is always on and generates configuration
+    "enable": true, 
     "presets": [ 
       ... // it will be concatenated to the base presets
     ],
@@ -31,11 +31,21 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
       ... // it will be concatenated to the base plugins
     ],
   },
+  prettier: {
+    "enable": true, 
+    "options": {...} // any prettier option will override default value
+    /* if set to `true` then:
+     * - install dependencies and add dependencies to package.json/package-lock.json
+     *
+     * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/prettier.html#ws_prettier_install
+     */
+  },
   react: {
     "enable": true, 
     /* if set to `true` then:  
      * - install dependencies and add dependencies to package.json/package-lock.json
      * - enables New JSX Transform in babel configuration
+     * - enables JSX options in prettier configuration
     */
   },
   "webpack": {
