@@ -40,9 +40,9 @@ function createConfig(config, options) {
   logger.info(CONFIG_FILENAME + " was built");
 }
 
-function prettier(config, options) {
-  manageDependencies("prettier", require("../packages/prettier"), options);
+function calculatePrettier(config, options) {
+  manageDependencies("prettier", require("../packages/prettier").base, options);
   createConfig(config, options);
 }
 
-module.exports = prettier;
+module.exports = calculatePrettier;

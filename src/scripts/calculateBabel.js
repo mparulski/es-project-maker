@@ -1,7 +1,6 @@
 "use strict";
 
 const manageDependencies = require("./utils/manageDependencies");
-const execOptions = require("./utils/execOptions");
 const logger = require("./utils/logger");
 const merge = require("deepmerge");
 const path = require("path");
@@ -19,7 +18,7 @@ function createConfig(config, options) {
 
   let babelConfig = babelDefaultConfig;
 
-  if (options.isReact) {
+  if (options.enabledModules.includes(MODULES.REACT)) {
     babelConfig = merge(babelConfig, babelReactDefaultConfig);
   }
 
@@ -59,9 +58,9 @@ function setDependencies(options) {
   manageDependencies("babel", babelDependencies, options);
 }
 
-function babel(config, options) {
+function calculateBabel(config, options) {
   setDependencies(options);
   createConfig(config, options);
 }
 
-module.exports = babel;
+module.exports = calculateBabel;
