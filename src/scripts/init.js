@@ -2,9 +2,9 @@
 
 const logger = require("./utils/logger");
 const isEnabled = require("./utils/isEnabledConfigOption");
-const makeBabel = require("./babel");
-const makePrettier = require("./prettier");
-const makeWebpack = require("./webpack");
+const calculateBabel = require("./calculateBabel");
+const calculatePrettier = require("./calculatePrettier");
+const calculateWebpack = require("./calculateWebpack");
 const path = require("path");
 const execOptions = require("./utils/execOptions");
 const MODULES = require("./modules");
@@ -23,11 +23,11 @@ function init(projectConfig, options) {
 
   const config = {
     [MODULES.BABEL]: ([projectConfig, options]) =>
-      makeBabel(projectConfig[MODULES.BABEL], options),
+      calculateBabel(projectConfig[MODULES.BABEL], options),
     [MODULES.PRETTIER]: ([projectConfig, options]) =>
-      makePrettier(projectConfig[MODULES.PRETTIER], options),
+      calculatePrettier(projectConfig[MODULES.PRETTIER], options),
     [MODULES.WEBPACK]: ([projectConfig, options]) =>
-      makeWebpack(projectConfig[MODULES.WEBPACK], options),
+      calculateWebpack(projectConfig[MODULES.WEBPACK], options),
   };
 
   execOptions(config)(options.enabledModules)(projectConfig, options);

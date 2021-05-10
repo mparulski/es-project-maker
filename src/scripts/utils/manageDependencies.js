@@ -7,7 +7,9 @@ function manageDependencies(moduleName, dependencies, options) {
   logger.info(`Start install ${moduleName} dependencies`);
 
   addDependencies(
-    Object.entries(dependencies).map(([name, version]) => `${name}@${version}`),
+    Object.values(dependencies).flatMap((dependency) =>
+      Object.entries(dependency).map(([name, version]) => `${name}@${version}`)
+    ),
     "--save-dev",
     options.verbose
   );
