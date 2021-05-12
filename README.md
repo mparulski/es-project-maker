@@ -23,7 +23,7 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
 ```
 {
   "babel": {
-    "enable": true, 
+    "enabled": true, 
     "presets": [ 
       ... // it will be concatenated to the base presets
     ],
@@ -32,7 +32,7 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
     ],
   },
   prettier: {
-    "enable": true, 
+    "enabled": true, 
     "options": {...} // any prettier option will override default value
     /* if set to `true` then:
      * - install dependencies and add dependencies to package.json/package-lock.json
@@ -41,7 +41,7 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
      */
   },
   react: {
-    "enable": true, 
+    "enabled": true, 
     /* if set to `true` then:  
      * - install dependencies and add dependencies to package.json/package-lock.json
      * - enables New JSX Transform in babel configuration
@@ -49,7 +49,7 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
     */
   },
   "webpack": {
-    "enable": true,
+    "enabled": true,
     "config": {}
   }
 }
