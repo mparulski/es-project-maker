@@ -4,7 +4,7 @@ const manageDependencies = require('./utils/manageDependencies')
 const logger = require('./utils/logger')
 const merge = require('deepmerge')
 const path = require('path')
-const touch = require('./utils/touchProjectConfig')
+const touch = require('./utils/touchJSModule')
 const execOptions = require('./utils/execOptions')
 const MODULES = require('./modules')
 
