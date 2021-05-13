@@ -1,66 +1,66 @@
-"use strict";
+'use strict'
 
-const manageDependencies = require("./utils/manageDependencies");
-const logger = require("./utils/logger");
-const merge = require("deepmerge");
-const path = require("path");
-const touch = require("./utils/touchProjectConfig");
+const manageDependencies = require('./utils/manageDependencies')
+const logger = require('./utils/logger')
+const merge = require('deepmerge')
+const path = require('path')
+const touch = require('./utils/touchJSModule')
 
-const MODULES = require("./modules");
+const MODULES = require('./modules')
 
-const babelDefaultConfig = require("../config/babel/babel.config");
-const babelReactDefaultConfig = require("../config/babel/babel-react.config");
+const babelDefaultConfig = require('../config/babel/babel.config')
+const babelReactDefaultConfig = require('../config/babel/babel-react.config')
 
-const CONFIG_FILENAME = "babel.config.js";
+const CONFIG_FILENAME = 'babel.config.js'
 
 function createConfig(config, options) {
-  logger.info("Start building the " + CONFIG_FILENAME);
+    logger.info('Start building the ' + CONFIG_FILENAME)
 
-  let babelConfig = babelDefaultConfig;
+    let babelConfig = babelDefaultConfig
 
-  if (options.enabledModules.includes(MODULES.REACT)) {
-    babelConfig = merge(babelConfig, babelReactDefaultConfig);
-  }
+    if (options.enabledModules.includes(MODULES.REACT)) {
+        babelConfig = merge(babelConfig, babelReactDefaultConfig)
+    }
 
-  const projectBabelConfig = config !== undefined ? config : {};
+    const projectBabelConfig = config !== undefined ? config : {}
 
-  if (projectBabelConfig["presets"]) {
-    babelConfig.presets = babelConfig.presets.concat(
-      projectBabelConfig["presets"]
-    );
-  }
+    if (projectBabelConfig['presets']) {
+        babelConfig.presets = babelConfig.presets.concat(
+            projectBabelConfig['presets'],
+        )
+    }
 
-  if (projectBabelConfig["plugins"]) {
-    babelConfig.plugins = babelConfig.plugins.concat(
-      projectBabelConfig["plugins"]
-    );
-  }
+    if (projectBabelConfig['plugins']) {
+        babelConfig.plugins = babelConfig.plugins.concat(
+            projectBabelConfig['plugins'],
+        )
+    }
 
-  const content = touch(
-    options.projectRootDir + path.sep + CONFIG_FILENAME,
-    babelConfig
-  );
-  options.verbose && logger.debug(CONFIG_FILENAME, content);
+    const content = touch(
+        options.projectRootDir + path.sep + CONFIG_FILENAME,
+        babelConfig,
+    )
+    options.verbose && logger.debug(CONFIG_FILENAME, content)
 
-  logger.info(CONFIG_FILENAME + " was built");
+    logger.info(CONFIG_FILENAME + ' was built')
 }
 
 function setDependencies(options) {
-  let babelDependencies = require("../packages/babel").base;
+    let babelDependencies = require('../packages/babel').base
 
-  if (options.enabledModules.includes(MODULES.REACT)) {
-    babelDependencies = merge(
-      babelDependencies,
-      require("../packages/babel").react
-    );
-  }
+    if (options.enabledModules.includes(MODULES.REACT)) {
+        babelDependencies = merge(
+            babelDependencies,
+            require('../packages/babel').react,
+        )
+    }
 
-  manageDependencies("babel", babelDependencies, options);
+    manageDependencies('babel', babelDependencies, options)
 }
 
 function calculateBabel(config, options) {
-  setDependencies(options);
-  createConfig(config, options);
+    setDependencies(options)
+    createConfig(config, options)
 }
 
-module.exports = calculateBabel;
+module.exports = calculateBabel

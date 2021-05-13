@@ -1,0 +1,9 @@
+.git/
+.idea/
+__tests__/
+config/
+coverage/
+node_modules/
+.gitignore
+.npmignore
+*.iml

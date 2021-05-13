@@ -1,6 +1,6 @@
 const touch = require("./touch")
 
-const touchProjectConfig = (file, fileContent) => {
+const touchJSModule = (file, fileContent) => {
     const content = ("module.exports = " + JSON.stringify(fileContent, null, 2));
 
     touch({
@@ -10,4 +10,4 @@ const touchProjectConfig = (file, fileContent) => {
     return content
 }
 
-module.exports = touchProjectConfig
+module.exports = touchJSModule
