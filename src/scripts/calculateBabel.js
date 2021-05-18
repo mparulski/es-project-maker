@@ -2,24 +2,24 @@
 
 const manageDependencies = require('./utils/manageDependencies')
 const logger = require('./utils/logger')
-const merge = require('deepmerge')
+const merge = require('./utils/merge')
 const path = require('path')
 const touchJSModule = require('./utils/touchJSModule')
 
 const MODULES = require('./modules')
-
-const babelDefaultConfig = require('../config/babel/babel.config')
-const babelReactDefaultConfig = require('../config/babel/babel-react.config')
 
 const CONFIG_FILENAME = 'babel.config.js'
 
 function createConfig(config, options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
-  let babelConfig = babelDefaultConfig
+  let babelConfig = require('../config/babel/babel.config')
 
   if (options.enabledModules.includes(MODULES.REACT)) {
-    babelConfig = merge(babelConfig, babelReactDefaultConfig)
+    babelConfig = merge(
+      babelConfig,
+      require('../config/babel/babel-react.config'),
+    )
   }
 
   const projectBabelConfig = config !== undefined ? config : {}
@@ -49,7 +49,7 @@ function setDependencies(options) {
 }
 
 function calculateBabel(config, options) {
-  setDependencies(options)
+  !options.noDeps && setDependencies(options)
   createConfig(config, options)
 }
 

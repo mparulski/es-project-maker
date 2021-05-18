@@ -6,10 +6,9 @@ const readFile = require('./utils/readFile')
 const touchJSON = require('./utils/touchJSON')
 
 const MODULES = require('./modules')
-const packageJsonFile = options.projectRootDir + path.sep + 'package.json'
 
 function calculateTasks(options) {
-  console.log(options)
+  const packageJsonFile = options.projectRootDir + path.sep + 'package.json'
 
   const scripts = {}
   if (
