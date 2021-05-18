@@ -15,8 +15,8 @@ function combineMerge(target, source, options) {
   return destination
 }
 
-function merge(x, y) {
+function mergeWithCombineArray(x, y) {
   return deepmerge(x, y, {arrayMerge: combineMerge})
 }
 
-module.exports = merge
+module.exports = mergeWithCombineArray
