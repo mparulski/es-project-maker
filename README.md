@@ -16,6 +16,7 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
 | arg | desc |
 |-----|------|
 | --config  | path to project global configuration |
+| --noDeps  | do not install dependencies |
 | --verbose | would really be useful to enable end users to diagnose their own issues |
 
 ### project config
