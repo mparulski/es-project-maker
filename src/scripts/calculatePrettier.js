@@ -43,7 +43,7 @@ function createConfig(config, options) {
 function calculatePrettier(config, options) {
   !options.noDeps &&
     manageDependencies(
-      'prettier',
+      MODULES.PRETTIER,
       require('../packages/prettier').base,
       options,
     )
