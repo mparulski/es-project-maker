@@ -5,7 +5,7 @@ We don't really plan on documenting or testing it well because it's specific to 
 
 ## How to run 
 ```
-npx @mparulski/es-project-maker --config=<path_to_project_config>
+npx @mparulski/es-project-maker --config=<path_to_project_config.js>
 ```
 eg.
 ```
@@ -15,14 +15,14 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.json
 ### args
 | arg | desc |
 |-----|------|
-| --config  | path to project global configuration |
+| --config  | path to project global configuration (it's must be js module)|
 | --noDeps  | do not install dependencies |
 | --verbose | would really be useful to enable end users to diagnose their own issues |
 
 ### project config
 
 ```
-{
+module.export = {
   "babel": {
     "enabled": true, 
     "presets": [ 

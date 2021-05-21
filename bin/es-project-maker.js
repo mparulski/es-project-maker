@@ -2,6 +2,7 @@
 'use strict'
 
 const fs = require('fs')
+const path = require('path')
 const logger = require('../src/scripts/utils/logger')
 const args = require('minimist')(process.argv.slice(2))
 
@@ -20,7 +21,7 @@ if (
   process.exit(1)
 }
 
-const projectConfig = JSON.parse(fs.readFileSync(args['config']))
+const projectConfig = require(path.resolve(args['config']))
 
 const options = {
   verbose: args['verbose'] === true,
