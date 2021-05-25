@@ -1,6 +1,7 @@
 'use strict'
 
 const manageDependencies = require('./utils/manageDependencies')
+const merge = require('./utils/mergeWithCombineArray')
 const path = require('path')
 const touch = require('./utils/touchJSModule')
 
@@ -11,11 +12,22 @@ const CONFIG_FILENAME = 'prettier.config.js'
 function createConfig(config, options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
-  let prettierConfig = require('../config/typescript/base.typescript.config')
+  let typescriptConfig = require('../config/typescript/base.typescript.config')
+
+  const modulesConfig = {
+    [MODULES.REACT]: () => {
+      typescriptConfig = merge(
+        typescriptConfig,
+        require('../config/typescript/react.typescript.config'),
+      )
+    },
+  }
+
+  execOptions(modulesConfig)(options.enabledModules)()
 
   const content = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,
-    prettierConfig,
+    typescriptConfig,
   )
 
   options.verbose && logger.debug(CONFIG_FILENAME, content)
