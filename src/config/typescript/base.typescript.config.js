@@ -16,10 +16,5 @@ module.exports = {
     noFallthroughCasesInSwitch: true,
   },
   include: ['src'],
-  exclude: [
-    'node_modules',
-    'src/*.test.ts',
-    'src/*.test.tsx',
-    'src/__mocks__',
-  ],
+  exclude: ['node_modules', 'src/*.test.ts', 'src/*.test.tsx', 'src/__mocks__'],
 }
