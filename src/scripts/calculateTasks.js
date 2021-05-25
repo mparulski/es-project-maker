@@ -22,6 +22,10 @@ function calculateTasks(options) {
     options.enabledModules.includes(MODULES.BABEL) &&
     options.enabledModules.includes(MODULES.WEBPACK)
   ) {
+    scripts.build = 'tsc --rootDir src --outDir dist'
+  }
+
+  if (options.enabledModules.includes(MODULES.TYPESCRIPT)) {
   }
 
   const packageJson = JSON.parse(readFile(packageJsonFile))
