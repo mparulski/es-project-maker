@@ -2,7 +2,7 @@
 
 const manageDependencies = require('./utils/manageDependencies')
 const logger = require('./utils/logger')
-const merge = require('./utils/merge')
+const merge = require('./utils/mergeWithCombineArray')
 const path = require('path')
 const touchJSModule = require('./utils/touchJSModule')
 
