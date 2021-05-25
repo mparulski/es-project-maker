@@ -1,21 +1,9 @@
-const merge = require("deepmerge")
-const path = require("path")
-const webpack = require("webpack")
+const webpackConfig = projectConfigPath => 
+    "#!/usr/bin/env node\n" +
+    "'use strict';\n" +
+    "const path = require('path');\n" +
+    "const {merge} = require(\"webpack-merge\");\n" +
+    "\n" +
+    "module.exports = () => merge(require(\"./webpack.dev.config\"), require(path.resolve(\"" + projectConfigPath + "\")).webpack.config)"
 
-module.exports = {
-    target: "web",
-    mode: "none",
-    entry: "./src/index.js",
-    resolve: {
-        extensions: ["*", ".js"]
-    },
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "index.bundle.js",
-        libraryTarget: "commonjs2",
-    },
-    stats: {
-        colors: true
-    },
-    devtool: "eval-source-map"
-}
+module.exports = webpackConfig
