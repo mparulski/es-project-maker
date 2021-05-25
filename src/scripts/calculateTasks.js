@@ -22,7 +22,7 @@ function calculateTasks(options) {
     options.enabledModules.includes(MODULES.BABEL) &&
     options.enabledModules.includes(MODULES.WEBPACK)
   ) {
-    scripts.build = 'tsc --rootDir src --outDir dist'
+    scripts.build = 'tsc'
   }
 
   if (options.enabledModules.includes(MODULES.TYPESCRIPT)) {

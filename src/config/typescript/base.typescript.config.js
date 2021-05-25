@@ -1,1 +1,25 @@
-module.exports = {}
+module.exports = {
+  compilerOptions: {
+    sourceMap: true,
+    module: 'es2015',
+    target: 'es2017',
+    moduleResolution: 'node',
+    outDir: './dist',
+    skipLibCheck: true,
+    declaration: true,
+    noEmit: true,
+    allowSyntheticDefaultImports: true,
+    strict: true,
+    noUnusedLocals: true,
+    noUnusedParameters: true,
+    noImplicitReturns: true,
+    noFallthroughCasesInSwitch: true,
+  },
+  include: ['src'],
+  exclude: [
+    'node_modules',
+    'src/*.test.ts',
+    'src/*.test.tsx',
+    'src/__mocks__',
+  ],
+}
