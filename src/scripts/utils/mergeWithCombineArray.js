@@ -7,7 +7,7 @@ function combineMerge(target, source, options) {
     if (typeof destination[index] === 'undefined') {
       destination[index] = options.cloneUnlessOtherwiseSpecified(item, options)
     } else if (options.isMergeableObject(item)) {
-      destination[index] = merge(target[index], item, options)
+      destination[index] = deepmerge(target[index], item, options)
     } else if (target.indexOf(item) === -1) {
       destination.push(item)
     }
