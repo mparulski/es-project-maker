@@ -1,3 +1,3 @@
 module.exports = {
-  base: [{typescript: '4.2.4'}],
+  base: [{typescript: '4.3.2'}],
 }
