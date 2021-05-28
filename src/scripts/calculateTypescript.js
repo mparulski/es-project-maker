@@ -1,9 +1,11 @@
 'use strict'
 
+const execOptions = require('./utils/execOptions')
+const logger = require('./utils/logger')
 const manageDependencies = require('./utils/manageDependencies')
 const merge = require('./utils/mergeWithCombineArray')
 const path = require('path')
-const touch = require('./utils/touchJSModule')
+const touch = require('./utils/touchJSON')
 
 const MODULES = require('./modules')
 
