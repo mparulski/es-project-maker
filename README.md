@@ -9,7 +9,7 @@ npx @mparulski/es-project-maker --config=<path_to_project_config.js>
 ```
 eg.
 ```
-npx @mparulski/es-project-maker --config=config/application.config.dev.json
+npx @mparulski/es-project-maker --config=config/application.config.dev.js
 ```
 
 ### args
