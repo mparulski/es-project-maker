@@ -7,7 +7,7 @@ const touch = require('./utils/touchJSModule')
 
 const MODULES = require('./modules')
 
-const CONFIG_FILENAME = 'prettier.config.js'
+const CONFIG_FILENAME = 'tsconfig.json'
 
 function createConfig(config, options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
@@ -42,6 +42,7 @@ function calculateTypescript(config, options) {
       require('../packages/typescript').base,
       options,
     )
+
   createConfig(config, options)
 }
 

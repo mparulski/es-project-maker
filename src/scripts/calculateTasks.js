@@ -22,10 +22,11 @@ function calculateTasks(options) {
     options.enabledModules.includes(MODULES.BABEL) &&
     options.enabledModules.includes(MODULES.WEBPACK)
   ) {
-    scripts.build = 'tsc'
+    scripts.build = ''
   }
 
   if (options.enabledModules.includes(MODULES.TYPESCRIPT)) {
+    scripts.build = 'tsc'
   }
 
   const packageJson = JSON.parse(readFile(packageJsonFile))
