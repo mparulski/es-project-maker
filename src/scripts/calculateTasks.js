@@ -12,20 +12,20 @@ function calculateTasks(options) {
 
   const scripts = {}
   if (
-    options.enabledModules.includes(MODULES.BABEL) &&
-    !options.enabledModules.includes(MODULES.WEBPACK)
+    options.enabledModules.has(MODULES.BABEL) &&
+    !options.enabledModules.has(MODULES.WEBPACK)
   ) {
     scripts.build = 'babel -w src/ -d dist -s'
   }
 
   if (
-    options.enabledModules.includes(MODULES.BABEL) &&
-    options.enabledModules.includes(MODULES.WEBPACK)
+    options.enabledModules.has(MODULES.BABEL) &&
+    options.enabledModules.has(MODULES.WEBPACK)
   ) {
     scripts.build = ''
   }
 
-  if (options.enabledModules.includes(MODULES.TYPESCRIPT)) {
+  if (options.enabledModules.has(MODULES.TYPESCRIPT)) {
     scripts.build = 'tsc'
   }
 

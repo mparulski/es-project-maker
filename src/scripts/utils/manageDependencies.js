@@ -3,20 +3,18 @@
 const addDependencies = require('./addDependencies')
 const logger = require('./logger')
 
-function manageDependencies(moduleName, dependencies, options) {
-    logger.info(`Start install ${moduleName} dependencies`)
+function manageDependencies(dependencies, options) {
+  logger.info('Start install dependencies')
 
-    addDependencies(
-        Object.values(dependencies).flatMap(dependency =>
-            Object.entries(dependency).map(
-                ([name, version]) => `${name}@${version}`,
-            ),
-        ),
-        '--save-dev',
-        options.verbose,
-    )
+  addDependencies(
+    Object.values(dependencies).flatMap(dependency =>
+      Object.entries(dependency).map(([name, version]) => `${name}@${version}`),
+    ),
+    '--save-dev',
+    options.verbose,
+  )
 
-    logger.info(`${moduleName} dependencies wa installed`)
+  logger.info('Dependencies was installed')
 }
 
 module.exports = manageDependencies
