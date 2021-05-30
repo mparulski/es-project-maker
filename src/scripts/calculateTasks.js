@@ -22,7 +22,7 @@ function calculateTasks(options) {
     options.enabledModules.has(MODULES.BABEL) &&
     options.enabledModules.has(MODULES.WEBPACK)
   ) {
-    scripts.build = ''
+    scripts.build = 'webpack serve --config=webpack.config.js'
   }
 
   if (options.enabledModules.has(MODULES.TYPESCRIPT)) {
