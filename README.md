@@ -13,16 +13,16 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.js
 ```
 
 ### args
-| arg | desc |
-|-----|------|
-| --config  | path to project global configuration (it's must be js module)|
-| --noDeps  | do not install dependencies |
-| --verbose | would really be useful to enable end users to diagnose their own issues |
+| arg | required | desc |
+|-----|----------|------|
+| --config  | Yes | path to project global configuration (it's must be js module)|
+| --noDeps  | No  | do not install dependencies |
+| --verbose | No  | would really be useful to enable end users to diagnose their own issues |
 
 ### project config
 
 ```
-module.export = {
+module.exports = {
   "babel": {
     "enabled": true, 
     "presets": [ 
