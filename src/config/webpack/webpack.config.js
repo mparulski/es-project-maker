@@ -4,7 +4,7 @@ const webpackConfig = projectConfigPath =>
   "const path = require('path');\n" +
   'const {merge} = require("webpack-merge");\n' +
   '\n' +
-  'module.exports = () => merge(require("./webpack.dev.config"), require(path.resolve("' +
+  'module.exports = () => merge(require("@mparulski/es-project-maker-webpack/config/webpack.dev.config"), require(path.resolve("' +
   projectConfigPath +
   '")).webpack.config)'
 
