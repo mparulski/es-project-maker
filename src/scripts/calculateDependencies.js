@@ -1,6 +1,7 @@
 'use strict'
 
 const getBabelDependencies = require('./calculateDependencies/getBabelDependencies')
+const getEslintDependencies = require('./calculateDependencies/getEslintDependencies')
 const getPrettierDependencies = require('./calculateDependencies/getPrettierDependencies')
 const getTypescriptDependencies = require('./calculateDependencies/getTypescriptDependencies')
 const logger = require('./utils/logger')
@@ -14,6 +15,10 @@ function calculateDependencies(options) {
 
   if (enabledModules.has(MODULES.BABEL)) {
     dependenciesArgs = [...dependenciesArgs, ...getBabelDependencies(options)]
+  }
+
+  if (enabledModules.has(MODULES.ESLINT)) {
+    dependenciesArgs = [...dependenciesArgs, ...getEslintDependencies(options)]
   }
 
   if (enabledModules.has(MODULES.PRETTIER)) {

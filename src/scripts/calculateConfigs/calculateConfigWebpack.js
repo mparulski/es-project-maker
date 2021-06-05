@@ -9,7 +9,7 @@ const args = require('minimist')(process.argv.slice(2))
 
 const CONFIG_FILENAME = 'webpack.config.js'
 
-function calculateConfigWebpack(config, options) {
+function calculateConfigWebpack(projectConfig = {}, options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
   const file = options.projectRootDir + path.sep + CONFIG_FILENAME

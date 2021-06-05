@@ -1,6 +1,8 @@
 'use strict'
 
+const getModuleConfig = require('./utils/getModuleConfig')
 const calculateConfigBabel = require('./calculateConfigs/calculateConfigBabel')
+const calculateConfigEslint = require('./calculateConfigs/calculateConfigEslint')
 const calculateConfigPrettier = require('./calculateConfigs/calculateConfigPrettier')
 const calculateConfigTypescript = require('./calculateConfigs/calculateConfigTypescript')
 const calculateConfigWebpack = require('./calculateConfigs/calculateConfigWebpack')
@@ -11,16 +13,31 @@ function calculateConfigs(projectConfig, options) {
   const {enabledModules} = options
 
   enabledModules.has(MODULES.BABEL) &&
-    calculateConfigBabel(projectConfig[MODULES.BABEL], options)
+    calculateConfigBabel(getModuleConfig(projectConfig[MODULES.BABEL]), options)
+
+  enabledModules.has(MODULES.ESLINT) &&
+    calculateConfigEslint(
+      getModuleConfig(projectConfig[MODULES.ESLINT]),
+      options,
+    )
 
   enabledModules.has(MODULES.PRETTIER) &&
-    calculateConfigPrettier(projectConfig[MODULES.PRETTIER], options)
+    calculateConfigPrettier(
+      getModuleConfig(projectConfig[MODULES.PRETTIER]),
+      options,
+    )
 
   enabledModules.has(MODULES.TYPESCRIPT) &&
-    calculateConfigTypescript(projectConfig[MODULES.TYPESCRIPT], options)
+    calculateConfigTypescript(
+      getModuleConfig(projectConfig[MODULES.TYPESCRIPT]),
+      options,
+    )
 
   enabledModules.has(MODULES.WEBPACK) &&
-    calculateConfigWebpack(projectConfig[MODULES.WEBPACK], options)
+    calculateConfigWebpack(
+      getModuleConfig(projectConfig[MODULES.WEBPACK]),
+      options,
+    )
 }
 
 module.exports = calculateConfigs

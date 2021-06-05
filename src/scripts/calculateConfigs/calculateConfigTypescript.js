@@ -9,7 +9,7 @@ const MODULES = require('../modules')
 
 const CONFIG_FILENAME = 'tsconfig.json'
 
-function calculateConfigTypescript(config, options) {
+function calculateConfigTypescript(projectConfig = {}, options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
   let typescriptConfig = require('../../config/typescript/base.typescript.config')
@@ -20,6 +20,8 @@ function calculateConfigTypescript(config, options) {
       require('../../config/typescript/react.typescript.config'),
     )
   }
+
+  typescriptConfig = {...typescriptConfig, ...projectConfig}
 
   const content = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,

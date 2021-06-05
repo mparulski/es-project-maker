@@ -21,7 +21,7 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.js
 
 ### project config
 
-```
+```js
 module.exports = {
   "babel": {
     "enabled": true, 
@@ -32,7 +32,13 @@ module.exports = {
       ... // it will be concatenated to the base plugins
     ],
   },
-  prettier: {
+  "eslint": {
+    "enabled": true,
+    /* 
+     * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/eslint.html
+     */
+  },
+  "prettier": {
     "enabled": true, 
     "options": {...} // any prettier option will override default value
     /* if set to `true` then:
