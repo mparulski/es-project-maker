@@ -4,7 +4,6 @@ const calculateConfigs = require('./calculateConfigs')
 const calculateDependencies = require('./calculateDependencies')
 const calculateTasks = require('./calculateTasks')
 const logger = require('./utils/logger')
-const isEnabled = require('./utils/isEnabledConfigOption')
 
 const path = require('path')
 const MODULES = require('./modules')
@@ -16,7 +15,12 @@ function init(projectConfig, options) {
     esProjectMakerScriptsDir: path.resolve(__dirname),
     enabledModules: new Set(
       Object.entries(MODULES)
-        .filter(([key, val]) => isEnabled(projectConfig[val]))
+        .filter(([key, val]) =>
+          Object.prototype.hasOwnProperty.call(
+            Object.assign({}, projectConfig),
+            val,
+          ),
+        )
         .map(([key, val]) => val),
     ),
   }

@@ -23,8 +23,8 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.js
 
 ```js
 module.exports = {
+    // if the module is present in the configuration, then it is enabled
   "babel": {
-    "enabled": true, 
     "presets": [ 
       ... // it will be concatenated to the base presets
     ],
@@ -33,13 +33,12 @@ module.exports = {
     ],
   },
   "eslint": {
-    "enabled": true,
     /* 
      * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/eslint.html
      */
   },
+  "jest": {},
   "prettier": {
-    "enabled": true, 
     "options": {...} // any prettier option will override default value
     /* if set to `true` then:
      * - install dependencies and add dependencies to package.json/package-lock.json
@@ -47,16 +46,15 @@ module.exports = {
      * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/prettier.html#ws_prettier_install
      */
   },
-  react: {
-    "enabled": true, 
+  "react": {
     /* if set to `true` then:  
      * - install dependencies and add dependencies to package.json/package-lock.json
      * - enables New JSX Transform in babel configuration
      * - enables JSX options in prettier configuration
     */
-  },
+  }, 
+  "typescript": {},
   "webpack": {
-    "enabled": true,
     "config": {}
   }
 }
