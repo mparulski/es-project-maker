@@ -13,18 +13,18 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.js
 ```
 
 ### args
-| arg | desc |
-|-----|------|
-| --config  | path to project global configuration (it's must be js module)|
-| --noDeps  | do not install dependencies |
-| --verbose | would really be useful to enable end users to diagnose their own issues |
+| arg | required | desc |
+|-----|----------|------|
+| --config  | Yes | path to project global configuration (it's must be js module)|
+| --noDeps  | No  | do not install dependencies |
+| --verbose | No  | would really be useful to enable end users to diagnose their own issues |
 
 ### project config
 
-```
-module.export = {
+```js
+module.exports = {
+    // if the module is present in the configuration, then it is enabled
   "babel": {
-    "enabled": true, 
     "presets": [ 
       ... // it will be concatenated to the base presets
     ],
@@ -32,8 +32,13 @@ module.export = {
       ... // it will be concatenated to the base plugins
     ],
   },
-  prettier: {
-    "enabled": true, 
+  "eslint": {
+    /* 
+     * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/eslint.html
+     */
+  },
+  "jest": {},
+  "prettier": {
     "options": {...} // any prettier option will override default value
     /* if set to `true` then:
      * - install dependencies and add dependencies to package.json/package-lock.json
@@ -41,16 +46,15 @@ module.export = {
      * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/prettier.html#ws_prettier_install
      */
   },
-  react: {
-    "enabled": true, 
+  "react": {
     /* if set to `true` then:  
      * - install dependencies and add dependencies to package.json/package-lock.json
      * - enables New JSX Transform in babel configuration
      * - enables JSX options in prettier configuration
     */
-  },
+  }, 
+  "typescript": {},
   "webpack": {
-    "enabled": true,
     "config": {}
   }
 }

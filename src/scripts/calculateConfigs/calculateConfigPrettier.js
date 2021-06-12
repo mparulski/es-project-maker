@@ -8,7 +8,7 @@ const MODULES = require('../modules')
 
 const CONFIG_FILENAME = 'prettier.config.js'
 
-function calculateConfigPrettier(config, options) {
+function calculateConfigPrettier(projectConfig = {}, options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
   let prettierConfig = require('../../config/prettier/base.prettier.config')
@@ -20,9 +20,7 @@ function calculateConfigPrettier(config, options) {
     )
   }
 
-  if (config.options) {
-    prettierConfig = merge(prettierConfig, config.options)
-  }
+  prettierConfig = {...prettierConfig, ...projectConfig}
 
   const content = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,

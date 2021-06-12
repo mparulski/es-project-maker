@@ -1,6 +1,7 @@
 'use strict'
 
 const calculateConfigBabel = require('./calculateConfigs/calculateConfigBabel')
+const calculateConfigEslint = require('./calculateConfigs/calculateConfigEslint')
 const calculateConfigPrettier = require('./calculateConfigs/calculateConfigPrettier')
 const calculateConfigTypescript = require('./calculateConfigs/calculateConfigTypescript')
 const calculateConfigWebpack = require('./calculateConfigs/calculateConfigWebpack')
@@ -12,6 +13,9 @@ function calculateConfigs(projectConfig, options) {
 
   enabledModules.has(MODULES.BABEL) &&
     calculateConfigBabel(projectConfig[MODULES.BABEL], options)
+
+  enabledModules.has(MODULES.ESLINT) &&
+    calculateConfigEslint(projectConfig[MODULES.ESLINT], options)
 
   enabledModules.has(MODULES.PRETTIER) &&
     calculateConfigPrettier(projectConfig[MODULES.PRETTIER], options)

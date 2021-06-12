@@ -1,5 +1,5 @@
 'use strict'
 
-function calculateConfigJest(config, options) {}
+function calculateConfigJest(projectConfig = {}, options) {}
 
 module.exports = calculateConfigJest
