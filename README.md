@@ -54,11 +54,15 @@ module.exports = {
     */
   }, 
   "typescript": {},
-  "webpack": {
-    "config": {}
-  }
+  "webpack": {}
 }
 ```
+
+###How to run webpack build
+
+1. Set webpack config in project config
+2. Run es-project-maker
+3. Run npm script "build" 
 
 ## Inspired 
 This is inspired by `react-scripts` and `kcd-scripts`
