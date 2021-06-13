@@ -5,23 +5,24 @@ const calculateConfigEslint = require('./calculateConfigs/calculateConfigEslint'
 const calculateConfigPrettier = require('./calculateConfigs/calculateConfigPrettier')
 const calculateConfigTypescript = require('./calculateConfigs/calculateConfigTypescript')
 const calculateConfigWebpack = require('./calculateConfigs/calculateConfigWebpack')
-const {hasModule} = require('./helpers/moduleHelperProvider')
+const moduleHelper = require('./helpers/moduleHelper')
 
 const MODULES = require('./modules')
 
 function calculateConfigs(projectConfig, options) {
-  hasModule.babel && calculateConfigBabel(projectConfig[MODULES.BABEL], options)
+  moduleHelper.hasBabel &&
+    calculateConfigBabel(projectConfig[MODULES.BABEL], options)
 
-  hasModule.eslint &&
+  moduleHelper.hasEslint &&
     calculateConfigEslint(projectConfig[MODULES.ESLINT], options)
 
-  hasModule.prettier &&
+  moduleHelper.hasPrettier &&
     calculateConfigPrettier(projectConfig[MODULES.PRETTIER], options)
 
-  hasModule.typescript &&
+  moduleHelper.hasTypescript &&
     calculateConfigTypescript(projectConfig[MODULES.TYPESCRIPT], options)
 
-  hasModule.webpack &&
+  moduleHelper.hasWebpack &&
     calculateConfigWebpack(projectConfig[MODULES.WEBPACK], options)
 }
 
