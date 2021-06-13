@@ -4,28 +4,21 @@ const path = require('path')
 const merge = require('deepmerge')
 const readFile = require('./utils/readFile')
 const touchJSON = require('./utils/touchJSON')
-
-const MODULES = require('./modules')
+const {hasModule} = require('./helpers/moduleHelperProvider')
 
 function calculateTasks(options) {
   const packageJsonFile = options.projectRootDir + path.sep + 'package.json'
 
   const scripts = {}
-  if (
-    options.enabledModules.has(MODULES.BABEL) &&
-    !options.enabledModules.has(MODULES.WEBPACK)
-  ) {
+  if (hasModule.babel && !hasModule.webpack) {
     scripts.build = 'babel -w src/ -d dist -s'
   }
 
-  if (
-    options.enabledModules.has(MODULES.BABEL) &&
-    options.enabledModules.has(MODULES.WEBPACK)
-  ) {
+  if (hasModule.babel && hasModule.webpack) {
     scripts.build = 'webpack serve --config=webpack.config.js'
   }
 
-  if (options.enabledModules.has(MODULES.TYPESCRIPT)) {
+  if (hasModule.typescript) {
     scripts.build = 'tsc'
   }
 

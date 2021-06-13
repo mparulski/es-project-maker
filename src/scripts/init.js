@@ -4,6 +4,7 @@ const calculateConfigs = require('./calculateConfigs')
 const calculateDependencies = require('./calculateDependencies')
 const calculateTasks = require('./calculateTasks')
 const logger = require('./utils/logger')
+const {init: moduleHelperInit} = require('./helpers/moduleHelperProvider')
 
 const path = require('path')
 const MODULES = require('./modules')
@@ -24,6 +25,8 @@ function init(projectConfig, options) {
         .map(([key, val]) => val),
     ),
   }
+
+  moduleHelperInit(options.enabledModules)
 
   options.verbose && logger.debug('Runtime options:' + JSON.stringify(options))
 

@@ -6,29 +6,28 @@ const getPrettierDependencies = require('./calculateDependencies/getPrettierDepe
 const getTypescriptDependencies = require('./calculateDependencies/getTypescriptDependencies')
 const logger = require('./utils/logger')
 const manageDependencies = require('./utils/manageDependencies')
-
-const MODULES = require('./modules')
+const {hasModule} = require('./helpers/moduleHelperProvider')
 
 function calculateDependencies(options) {
   const {enabledModules} = options
   let dependenciesArgs = []
 
-  if (enabledModules.has(MODULES.BABEL)) {
+  if (hasModule.babel) {
     dependenciesArgs = [...dependenciesArgs, ...getBabelDependencies(options)]
   }
 
-  if (enabledModules.has(MODULES.ESLINT)) {
+  if (hasModule.eslint) {
     dependenciesArgs = [...dependenciesArgs, ...getEslintDependencies(options)]
   }
 
-  if (enabledModules.has(MODULES.PRETTIER)) {
+  if (hasModule.prettier) {
     dependenciesArgs = [
       ...dependenciesArgs,
       ...getPrettierDependencies(options),
     ]
   }
 
-  if (enabledModules.has(MODULES.TYPESCRIPT)) {
+  if (hasModule.typescript) {
     dependenciesArgs = [
       ...dependenciesArgs,
       ...getTypescriptDependencies(options),

@@ -4,8 +4,7 @@ const logger = require('../utils/logger')
 const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touch = require('../utils/touchJSON')
-
-const MODULES = require('../modules')
+const {hasModule} = require('../helpers/moduleHelperProvider')
 
 const CONFIG_FILENAME = 'tsconfig.json'
 
@@ -14,7 +13,7 @@ function calculateConfigTypescript(projectConfig = {}, options) {
 
   let typescriptConfig = require('../../config/typescript/base.typescript.config')
 
-  if (options.enabledModules.has(MODULES.REACT)) {
+  if (hasModule.react) {
     typescriptConfig = merge(
       typescriptConfig,
       require('../../config/typescript/react.typescript.config'),
