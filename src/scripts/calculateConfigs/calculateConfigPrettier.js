@@ -4,7 +4,7 @@ const logger = require('../utils/logger')
 const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touch = require('../utils/touchJSModule')
-const MODULES = require('../modules')
+const {hasModule} = require('../helpers/moduleHelperProvider')
 
 const CONFIG_FILENAME = 'prettier.config.js'
 
@@ -13,7 +13,7 @@ function calculateConfigPrettier(projectConfig = {}, options) {
 
   let prettierConfig = require('../../config/prettier/base.prettier.config')
 
-  if (options.enabledModules.has(MODULES.REACT)) {
+  if (hasModule.react) {
     prettierConfig = merge(
       prettierConfig,
       require('../../config/prettier/react.prettier.config'),

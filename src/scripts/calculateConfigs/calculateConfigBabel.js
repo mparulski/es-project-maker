@@ -4,8 +4,7 @@ const logger = require('../utils/logger')
 const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touchJSModule = require('../utils/touchJSModule')
-
-const MODULES = require('../modules')
+const {hasModule} = require('../helpers/moduleHelperProvider')
 
 const CONFIG_FILENAME = 'babel.config.js'
 
@@ -14,7 +13,7 @@ function calculateConfigBabel(projectConfig = {}, options) {
 
   let babelConfig = require('../../config/babel/babel.config')
 
-  if (options.enabledModules.has(MODULES.REACT)) {
+  if (hasModule.react) {
     babelConfig = merge(
       babelConfig,
       require('../../config/babel/babel-react.config'),
