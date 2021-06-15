@@ -8,7 +8,7 @@ const moduleHelper = require('../helpers/moduleHelper')
 
 const CONFIG_FILENAME = 'babel.config.js'
 
-function calculateConfigBabel(projectConfig = {}, options) {
+function calculateConfigBabel(options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
   let babelConfig = require('../../config/babel/babel.config')
@@ -20,7 +20,7 @@ function calculateConfigBabel(projectConfig = {}, options) {
     )
   }
 
-  babelConfig = {...babelConfig, ...projectConfig}
+  babelConfig = {...babelConfig, ...moduleHelper.configBabel}
 
   const content = touchJSModule(
     options.projectRootDir + path.sep + CONFIG_FILENAME,

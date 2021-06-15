@@ -1,12 +1,10 @@
 'use strict'
 
-const MODULES = require('../modules')
-
-const modules = {}
+const OPTIONAL_MODULES = require('../optionalModules')
 
 const getEnabledModules = projectConfig => {
   return new Set(
-    Object.entries(MODULES)
+    Object.entries(OPTIONAL_MODULES)
       .filter(([key, val]) =>
         Object.prototype.hasOwnProperty.call(
           Object.assign({}, projectConfig),
@@ -17,17 +15,38 @@ const getEnabledModules = projectConfig => {
   )
 }
 
+const getConfig = projectConfig => moduleKey => {
+  if (
+    !Object.prototype.hasOwnProperty.call(
+      Object.assign({}, projectConfig),
+      moduleKey,
+    )
+  ) {
+    return {}
+  }
+
+  return projectConfig[moduleKey]
+}
+
 const init = projectConfig => {
   const enabledModules = getEnabledModules(projectConfig)
 
-  modules.hasBabel = enabledModules.has(MODULES.BABEL)
-  modules.hasEslint = enabledModules.has(MODULES.ESLINT)
-  modules.hasJest = enabledModules.has(MODULES.JEST)
-  modules.hasPrettier = enabledModules.has(MODULES.PRETTIER)
-  modules.hasTypescript = enabledModules.has(MODULES.TYPESCRIPT)
-  modules.hasWebpack = enabledModules.has(MODULES.WEBPACK)
+  const modules = {
+    hasReact: enabledModules.has(OPTIONAL_MODULES.REACT),
+  }
 
-  Object.assign(init, modules)
+  const getConfigByModuleKey = getConfig(projectConfig)
+
+  const configs = {
+    configBabel: getConfigByModuleKey('babel'),
+    configEslint: getConfigByModuleKey('eslint'),
+    configPrettier: getConfigByModuleKey('prettier'),
+    configReact: getConfigByModuleKey('react'),
+    configTypescript: getConfigByModuleKey('typescript'),
+    configWebpack: getConfigByModuleKey('webpack'),
+  }
+
+  Object.assign(init, Object.freeze(modules), Object.freeze(configs))
 }
 
 module.exports = init
