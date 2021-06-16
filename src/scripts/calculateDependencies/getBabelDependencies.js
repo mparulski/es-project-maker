@@ -1,11 +1,11 @@
 'use strict'
 
-const MODULES = require('../modules')
+const moduleHelper = require('../helpers/moduleHelper')
 
 function getBabelDependencies(options) {
   let dependencies = require('../../packages/babel').base
 
-  if (options.enabledModules.has(MODULES.REACT)) {
+  if (moduleHelper.hasReact) {
     dependencies = [...dependencies, ...require('../../packages/babel').react]
   }
 

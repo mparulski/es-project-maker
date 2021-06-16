@@ -4,23 +4,23 @@ const logger = require('../utils/logger')
 const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touch = require('../utils/touchJSModule')
-const MODULES = require('../modules')
+const moduleHelper = require('../helpers/moduleHelper')
 
 const CONFIG_FILENAME = 'prettier.config.js'
 
-function calculateConfigPrettier(projectConfig = {}, options) {
+function calculateConfigPrettier(options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
   let prettierConfig = require('../../config/prettier/base.prettier.config')
 
-  if (options.enabledModules.has(MODULES.REACT)) {
+  if (moduleHelper.hasReact) {
     prettierConfig = merge(
       prettierConfig,
       require('../../config/prettier/react.prettier.config'),
     )
   }
 
-  prettierConfig = {...prettierConfig, ...projectConfig}
+  prettierConfig = {...prettierConfig, ...moduleHelper.configPrettier}
 
   const content = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,

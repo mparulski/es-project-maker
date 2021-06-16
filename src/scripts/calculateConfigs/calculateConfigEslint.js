@@ -3,15 +3,16 @@
 const logger = require('../utils/logger')
 const path = require('path')
 const touchJSON = require('../utils/touchJSON')
+const moduleHelper = require('../helpers/moduleHelper')
 
 const CONFIG_FILENAME = '.eslintrc.json'
 
-function calculateConfigEslint(projectConfig = {}, options) {
+function calculateConfigEslint(options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
   let eslintConfig = require('../../config/eslint/eslint.config')
 
-  eslintConfig = {...eslintConfig, ...projectConfig}
+  eslintConfig = {...eslintConfig, ...moduleHelper.configEslint}
 
   const content = touchJSON(
     options.projectRootDir + path.sep + CONFIG_FILENAME,

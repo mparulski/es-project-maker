@@ -4,26 +4,18 @@ const calculateConfigs = require('./calculateConfigs')
 const calculateDependencies = require('./calculateDependencies')
 const calculateTasks = require('./calculateTasks')
 const logger = require('./utils/logger')
+const moduleHelper = require('./helpers/moduleHelper')
 
 const path = require('path')
-const MODULES = require('./modules')
 
 function init(projectConfig, options) {
   options = {
     ...options,
     projectRootDir: process.cwd(),
     esProjectMakerScriptsDir: path.resolve(__dirname),
-    enabledModules: new Set(
-      Object.entries(MODULES)
-        .filter(([key, val]) =>
-          Object.prototype.hasOwnProperty.call(
-            Object.assign({}, projectConfig),
-            val,
-          ),
-        )
-        .map(([key, val]) => val),
-    ),
   }
+
+  moduleHelper(projectConfig)
 
   options.verbose && logger.debug('Runtime options:' + JSON.stringify(options))
 

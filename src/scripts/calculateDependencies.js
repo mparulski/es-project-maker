@@ -6,34 +6,18 @@ const getPrettierDependencies = require('./calculateDependencies/getPrettierDepe
 const getTypescriptDependencies = require('./calculateDependencies/getTypescriptDependencies')
 const logger = require('./utils/logger')
 const manageDependencies = require('./utils/manageDependencies')
-
-const MODULES = require('./modules')
+const moduleHelper = require('./helpers/moduleHelper')
 
 function calculateDependencies(options) {
-  const {enabledModules} = options
-  let dependenciesArgs = []
-
-  if (enabledModules.has(MODULES.BABEL)) {
-    dependenciesArgs = [...dependenciesArgs, ...getBabelDependencies(options)]
-  }
-
-  if (enabledModules.has(MODULES.ESLINT)) {
-    dependenciesArgs = [...dependenciesArgs, ...getEslintDependencies(options)]
-  }
-
-  if (enabledModules.has(MODULES.PRETTIER)) {
-    dependenciesArgs = [
-      ...dependenciesArgs,
-      ...getPrettierDependencies(options),
-    ]
-  }
-
-  if (enabledModules.has(MODULES.TYPESCRIPT)) {
-    dependenciesArgs = [
-      ...dependenciesArgs,
-      ...getTypescriptDependencies(options),
-    ]
-  }
+  let dependenciesArgs = [
+    ...getBabelDependencies(options),
+    ...getEslintDependencies(options),
+    ...getPrettierDependencies(options),
+    ...getTypescriptDependencies(options),
+    ...(moduleHelper.hasReact
+      ? require('./calculateDependencies/getReactDependencies')
+      : []),
+  ]
 
   logger.info('List of dependencies: ', dependenciesArgs)
 

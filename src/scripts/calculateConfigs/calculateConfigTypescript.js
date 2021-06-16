@@ -4,24 +4,23 @@ const logger = require('../utils/logger')
 const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touch = require('../utils/touchJSON')
-
-const MODULES = require('../modules')
+const moduleHelper = require('../helpers/moduleHelper')
 
 const CONFIG_FILENAME = 'tsconfig.json'
 
-function calculateConfigTypescript(projectConfig = {}, options) {
+function calculateConfigTypescript(options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
   let typescriptConfig = require('../../config/typescript/base.typescript.config')
 
-  if (options.enabledModules.has(MODULES.REACT)) {
+  if (moduleHelper.hasReact) {
     typescriptConfig = merge(
       typescriptConfig,
       require('../../config/typescript/react.typescript.config'),
     )
   }
 
-  typescriptConfig = {...typescriptConfig, ...projectConfig}
+  typescriptConfig = {...typescriptConfig, ...moduleHelper.configTypescript}
 
   const content = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,

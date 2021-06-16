@@ -23,38 +23,51 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.js
 
 ```js
 module.exports = {
-    // if the module is present in the configuration, then it is enabled
-  "babel": {
-    "presets": [ 
-      ... // it will be concatenated to the base presets
-    ],
-    "plugins": [
-      ... // it will be concatenated to the base plugins
-    ],
+  "babel": { // the module is always enabled
+      /*
+       * Values are passed in the body of that module and they extend or overwriting default values
+       * By the default install dependencies and add to package.json/package-lock.json
+       * 
+       * Configuration body eg.
+       * "presets": [], it will be concatenated to the base presets
+       * "plugins": [], it will be concatenated to the base plugins
+       */
   },
-  "eslint": {
+  "eslint": { // the module is always enabled
     /* 
+     * Values are passed in the body of that module and they extend or overwriting default values
+     * By the default install dependencies and add to package.json/package-lock.json
+     * 
      * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/eslint.html
      */
   },
-  "jest": {},
-  "prettier": {
-    "options": {...} // any prettier option will override default value
-    /* if set to `true` then:
-     * - install dependencies and add dependencies to package.json/package-lock.json
-     *
+  "prettier": { // the module is always enabled
+    /*
+     * Values are passed in the body of that module and they extend or overwriting default values
+     * By the default install dependencies and add to package.json/package-lock.json
+     * 
      * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/prettier.html#ws_prettier_install
      */
   },
-  "react": {
-    /* if set to `true` then:  
+  "react": { // the module is optionally enabled if key 'react' exists in this config
+    /* if that key exists, then:  
      * - install dependencies and add dependencies to package.json/package-lock.json
      * - enables New JSX Transform in babel configuration
-     * - enables JSX options in prettier configuration
+     * - enables ReactJS/JSX options in prettier configuration
     */
   }, 
-  "typescript": {},
-  "webpack": {}
+  "typescript": { // the module is always enabled
+    /*
+     * Values are passed in the body of that module and they extend or overwriting default values
+     * By the default install dependencies and add to package.json/package-lock.json
+     */
+},
+  "webpack": {
+    /*
+     * Values are passed in the body of that module and they extend or overwriting default values
+     * By the default install dependencies and add to package.json/package-lock.json
+     */
+  }
 }
 ```
 
