@@ -1,5 +1,5 @@
 module.exports = {
   compilerOptions: {
-    jsx: 'react',
+    jsx: 'react-jsx',
   },
 }
