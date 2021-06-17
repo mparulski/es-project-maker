@@ -15,7 +15,7 @@ function calculateDependencies(options) {
     ...getPrettierDependencies(options),
     ...getTypescriptDependencies(options),
     ...(moduleHelper.hasReact
-      ? require('./calculateDependencies/getReactDependencies')
+      ? require('./calculateDependencies/getReactDependencies')(options)
       : []),
   ]
 
