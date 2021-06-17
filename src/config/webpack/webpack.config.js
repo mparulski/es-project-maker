@@ -6,6 +6,6 @@ const webpackConfig = projectConfigPath =>
   '\n' +
   'module.exports = () => merge(require("@mparulski/es-project-maker-webpack/config/webpack.dev.config"), require(path.resolve("' +
   projectConfigPath +
-  '")).webpack.config)'
+  '")).webpack)'
 
 module.exports = webpackConfig
