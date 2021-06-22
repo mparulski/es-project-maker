@@ -8,20 +8,20 @@ const args = require('minimist')(process.argv.slice(2))
 
 const init = require('../src/scripts/init')
 
+let projectConfig = {}
+
 if (
   args['config'] === undefined ||
   args['config'] === null ||
   !fs.existsSync(args['config'])
 ) {
-  logger.error(
-    'Configuration file does not exists!\n',
-    '\x1b[33m',
-    'You must specified configuration file path in --config parameter',
+  logger.info(
+    'Configuration file has not been set.\n',
+    'It can be specified as a configuration file path in --config parameter',
   )
-  process.exit(1)
+} else {
+  projectConfig = require(path.resolve(args['config']))
 }
-
-const projectConfig = require(path.resolve(args['config']))
 
 const options = {
   verbose: args['verbose'] === true,
