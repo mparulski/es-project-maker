@@ -1,7 +1,6 @@
 'use strict'
 
 const logger = require('../utils/logger')
-const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touchJSModule = require('../utils/touchJSModule')
 const moduleHelper = require('../helpers/moduleHelper')
@@ -14,17 +13,15 @@ function calculateConfigBabel(options) {
   let babelConfig = require('../../config/babel/babel.config')
 
   if (moduleHelper.hasReact) {
-    babelConfig = merge(
-      babelConfig,
-      require('../../config/babel/babel-react.config'),
-    )
+    babelConfig.presets = [
+      ...babelConfig.presets,
+      ...require('../../config/babel/babel-react.config').presets,
+    ]
   }
-
-  babelConfig = {...babelConfig, ...moduleHelper.configBabel}
 
   const content = touchJSModule(
     options.projectRootDir + path.sep + CONFIG_FILENAME,
-    babelConfig,
+    moduleHelper.callbackConfigBabel(babelConfig),
   )
   options.verbose && logger.debug(CONFIG_FILENAME, content)
 

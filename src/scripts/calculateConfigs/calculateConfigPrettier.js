@@ -1,7 +1,6 @@
 'use strict'
 
 const logger = require('../utils/logger')
-const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touch = require('../utils/touchJSModule')
 const moduleHelper = require('../helpers/moduleHelper')
@@ -14,17 +13,15 @@ function calculateConfigPrettier(options) {
   let prettierConfig = require('../../config/prettier/base.prettier.config')
 
   if (moduleHelper.hasReact) {
-    prettierConfig = merge(
-      prettierConfig,
-      require('../../config/prettier/react.prettier.config'),
-    )
+    prettierConfig = {
+      ...prettierConfig,
+      ...require('../../config/prettier/react.prettier.config'),
+    }
   }
-
-  prettierConfig = {...prettierConfig, ...moduleHelper.configPrettier}
 
   const content = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,
-    prettierConfig,
+    moduleHelper.callbackConfigPrettier(prettierConfig),
   )
 
   options.verbose && logger.debug(CONFIG_FILENAME, content)

@@ -1,7 +1,6 @@
 'use strict'
 
 const logger = require('../utils/logger')
-const merge = require('../utils/mergeWithCombineArray')
 const path = require('path')
 const touch = require('../utils/touchJSON')
 const moduleHelper = require('../helpers/moduleHelper')
@@ -14,17 +13,16 @@ function calculateConfigTypescript(options) {
   let typescriptConfig = require('../../config/typescript/base.typescript.config')
 
   if (moduleHelper.hasReact) {
-    typescriptConfig = merge(
-      typescriptConfig,
-      require('../../config/typescript/react.typescript.config'),
-    )
+    typescriptConfig.compilerOptions = {
+      ...typescriptConfig.compilerOptions,
+      ...require('../../config/typescript/react.typescript.config')
+        .compilerOptions,
+    }
   }
-
-  typescriptConfig = {...typescriptConfig, ...moduleHelper.configTypescript}
 
   const content = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,
-    typescriptConfig,
+    moduleHelper.callbackConfigTypescript(typescriptConfig),
   )
 
   options.verbose && logger.debug(CONFIG_FILENAME, content)

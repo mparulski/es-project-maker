@@ -12,11 +12,9 @@ function calculateConfigEslint(options) {
 
   let eslintConfig = require('../../config/eslint/eslint.config')
 
-  eslintConfig = {...eslintConfig, ...moduleHelper.configEslint}
-
   const content = touchJSON(
     options.projectRootDir + path.sep + CONFIG_FILENAME,
-    eslintConfig,
+    moduleHelper.callbackConfigEslint(eslintConfig),
   )
   options.verbose && logger.debug(CONFIG_FILENAME, content)
 

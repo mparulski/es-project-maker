@@ -22,7 +22,9 @@ const getConfig = projectConfig => moduleKey => {
       moduleKey,
     )
   ) {
-    return {}
+    return config => {
+      return config
+    }
   }
 
   return projectConfig[moduleKey]
@@ -38,12 +40,12 @@ const init = projectConfig => {
   const getConfigByModuleKey = getConfig(projectConfig)
 
   const configs = {
-    configBabel: getConfigByModuleKey('babel'),
-    configEslint: getConfigByModuleKey('eslint'),
-    configPrettier: getConfigByModuleKey('prettier'),
-    configReact: getConfigByModuleKey('react'),
-    configTypescript: getConfigByModuleKey('typescript'),
-    configWebpack: getConfigByModuleKey('webpack'),
+    callbackConfigBabel: getConfigByModuleKey('babel'),
+    callbackConfigEslint: getConfigByModuleKey('eslint'),
+    callbackConfigPrettier: getConfigByModuleKey('prettier'),
+    callbackConfigReact: getConfigByModuleKey('react'),
+    callbackConfigTypescript: getConfigByModuleKey('typescript'),
+    callbackConfigWebpack: getConfigByModuleKey('webpack'),
   }
 
   Object.assign(init, Object.freeze(modules), Object.freeze(configs))

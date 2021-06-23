@@ -6,12 +6,12 @@ const calculateConfigPrettier = require('./calculateConfigs/calculateConfigPrett
 const calculateConfigTypescript = require('./calculateConfigs/calculateConfigTypescript')
 const calculateConfigWebpack = require('./calculateConfigs/calculateConfigWebpack')
 
-function calculateConfigs(projectConfig, options) {
+function calculateConfigs(options) {
   calculateConfigBabel(options)
   calculateConfigEslint(options)
   calculateConfigPrettier(options)
   calculateConfigTypescript(options)
-  calculateConfigWebpack(options)
+  // calculateConfigWebpack(options)
 }
 
 module.exports = calculateConfigs

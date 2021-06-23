@@ -23,51 +23,61 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.js
 
 ```js
 module.exports = {
-  "babel": { // the module is always enabled
-      /*
-       * Values are passed in the body of that module and they extend or overwriting default values
-       * By the default install dependencies and add to package.json/package-lock.json
-       * 
-       * Configuration body eg.
-       * "presets": [], it will be concatenated to the base presets
-       * "plugins": [], it will be concatenated to the base plugins
-       */
-  },
-  "eslint": { // the module is always enabled
-    /* 
+    /*
+     * The module is always enabled
+     *
+     * Values are passed in the body of that module and they extend or overwriting default values
+     * By the default install dependencies and add to package.json/package-lock.json
+     * 
+     * Configuration body eg.
+     * "presets": [], it will be concatenated to the base presets
+     * "plugins": [], it will be concatenated to the base plugins
+     */
+  "babel": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
+    /*
+     * The module is always enabled
+     *
      * Values are passed in the body of that module and they extend or overwriting default values
      * By the default install dependencies and add to package.json/package-lock.json
      * 
      * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/eslint.html
      */
-  },
-  "prettier": { // the module is always enabled
+  "eslint": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
     /*
+     * The module is always enabled
+     *
      * Values are passed in the body of that module and they extend or overwriting default values
      * By the default install dependencies and add to package.json/package-lock.json
      * 
      * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/prettier.html#ws_prettier_install
      */
-  },
-  "react": { // the module is optionally enabled if key 'react' exists in this config
-    /* if that key exists, then:  
+  "prettier": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
+    /*
+     * The module is enabled when is passed in projct-config like 
+     *      module.exports = {
+     *          react: {}
+     *      }
+     *
+     * if that key exists, then:  
      * - install dependencies and add dependencies to package.json/package-lock.json
      * - enables New JSX Transform in babel configuration
      * - enables ReactJS/JSX options in prettier configuration
-    */
-  }, 
-  "typescript": { // the module is always enabled
+     */
+  "react": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
     /*
+     * The module is always enabled
+     *
      * Values are passed in the body of that module and they extend or overwriting default values
      * By the default install dependencies and add to package.json/package-lock.json
      */
-},
-  "webpack": {
+  "typescript": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
     /*
+     * The module is always enabled
+     *
      * Values are passed in the body of that module and they extend or overwriting default values
      * By the default install dependencies and add to package.json/package-lock.json
      */
-  }
+  "webpack": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
 }
 ```
 

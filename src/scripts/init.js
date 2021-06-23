@@ -20,7 +20,7 @@ function init(projectConfig, options) {
   options.verbose && logger.debug('Runtime options:' + JSON.stringify(options))
 
   !options.noDeps && calculateDependencies(options)
-  calculateConfigs(projectConfig, options)
+  calculateConfigs(options)
   calculateTasks(options)
 }
 
