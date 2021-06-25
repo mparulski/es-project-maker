@@ -1,3 +1,6 @@
 module.exports = {
-  base: [{typescript: '4.3.4'}, {'ts-loader': '9.2.3'}],
+  base: [
+    {typescript: {version: '4.3.4', type: '--save-dev'}},
+    {'ts-loader': {version: '9.2.3', type: '--save-dev'}},
+  ],
 }
