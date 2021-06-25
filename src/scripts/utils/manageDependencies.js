@@ -16,13 +16,15 @@ function manageDependencies(dependencies, options) {
     Object.entries(dependency),
   )
 
-  const packageTypeSave = ['--save'].concat(
+  const packageTypeProd = ['--save-prod'].concat(
     prepareListOfPackagesToInstall(
       allPackages.filter(([packageName, details]) => details.type === '--save'),
     ),
   )
 
-  const packageTypeSaveDev = ['--save-dev'].concat(
+  addDependencies(packageTypeProd, '--save-prod', options.verbose)
+
+  const packageTypeDev = ['--save-dev'].concat(
     prepareListOfPackagesToInstall(
       allPackages.filter(
         ([packageName, details]) => details.type === '--save-dev',
@@ -30,7 +32,7 @@ function manageDependencies(dependencies, options) {
     ),
   )
 
-  addDependencies([...packageTypeSaveDev, ...packageTypeSave], options.verbose)
+  addDependencies(packageTypeDev, '--save-dev', options.verbose)
 
   logger.info('Dependencies was installed')
 }

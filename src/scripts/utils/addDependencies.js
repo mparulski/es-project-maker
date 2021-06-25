@@ -3,12 +3,17 @@
 const spawn = require('./spawn')
 const logger = require('./logger')
 
-function addDependencies(packages, verbose = false) {
+function addDependencies(
+  packages,
+  additionalArgs = ['--save-dev'],
+  verbose = false,
+) {
   const command = 'npm'
+
   const baseArgs = ['install', '--save-exact', verbose && '--verbose'].filter(
     e => e,
   )
-  const args = baseArgs.concat(packages)
+  const args = baseArgs.concat(additionalArgs).concat(packages)
   const proc = spawn.sync(command, args, {stdio: 'inherit'})
 
   if (proc.status !== 0) {
