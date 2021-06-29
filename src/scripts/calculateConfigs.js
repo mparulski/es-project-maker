@@ -9,9 +9,9 @@ const calculateConfigWebpack = require('./configs/calculateConfigWebpack')
 function calculateConfigs(options) {
   options.babel && calculateConfigBabel(options)
   options.eslint && calculateConfigEslint(options)
-  // options.prettier && calculateConfigPrettier(options)
-  // options.typescript && calculateConfigTypescript(options)
-  // options.webpack && calculateConfigWebpack(options)
+  options.prettier && calculateConfigPrettier(options)
+  options.typescript && calculateConfigTypescript(options)
+  options.webpack && calculateConfigWebpack(options)
 }
 
 module.exports = calculateConfigs

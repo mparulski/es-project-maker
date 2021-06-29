@@ -1,7 +1,7 @@
 'use strict'
 
-function getWebpackDependencies(options) {
+function getReactDependencies(options) {
   return require('../../packages/react').base
 }
 
-module.exports = getWebpackDependencies
+module.exports = getReactDependencies
