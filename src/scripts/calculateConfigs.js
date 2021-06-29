@@ -1,17 +1,17 @@
 'use strict'
 
-const calculateConfigBabel = require('./calculateConfigs/calculateConfigBabel')
-const calculateConfigEslint = require('./calculateConfigs/calculateConfigEslint')
-const calculateConfigPrettier = require('./calculateConfigs/calculateConfigPrettier')
-const calculateConfigTypescript = require('./calculateConfigs/calculateConfigTypescript')
-const calculateConfigWebpack = require('./calculateConfigs/calculateConfigWebpack')
+const calculateConfigBabel = require('./configs/calculateConfigBabel')
+const calculateConfigEslint = require('./configs/calculateConfigEslint')
+const calculateConfigPrettier = require('./configs/calculateConfigPrettier')
+const calculateConfigTypescript = require('./configs/calculateConfigTypescript')
+const calculateConfigWebpack = require('./configs/calculateConfigWebpack')
 
 function calculateConfigs(options) {
-  calculateConfigBabel(options)
-  calculateConfigEslint(options)
-  calculateConfigPrettier(options)
-  calculateConfigTypescript(options)
-  calculateConfigWebpack(options)
+  options.babel && calculateConfigBabel(options)
+  options.eslint && calculateConfigEslint(options)
+  // options.prettier && calculateConfigPrettier(options)
+  // options.typescript && calculateConfigTypescript(options)
+  // options.webpack && calculateConfigWebpack(options)
 }
 
 module.exports = calculateConfigs

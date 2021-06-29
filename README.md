@@ -13,11 +13,12 @@ npx @mparulski/es-project-maker --config=config/application.config.dev.js
 ```
 
 ### args
-| arg | required | desc |
-|-----|----------|------|
-| --config  | Yes | path to project global configuration (it's must be js module)|
-| --noDeps  | No  | do not install dependencies |
-| --verbose | No  | would really be useful to enable end users to diagnose their own issues |
+| arg | required | default | desc |
+|-----|----------|---------| -----|
+| --babel        | No | true | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --babelConfig  | No |      | path to project config options (described below) |
+| --noDeps  | No |        | do not install dependencies |
+| --verbose | No |        | would really be useful to enable end users to diagnose their own issues |
 
 ### project config
 

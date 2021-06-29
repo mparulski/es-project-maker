@@ -1,23 +1,22 @@
 'use strict'
 
-const getBabelDependencies = require('./calculateDependencies/getBabelDependencies')
-const getEslintDependencies = require('./calculateDependencies/getEslintDependencies')
-const getPrettierDependencies = require('./calculateDependencies/getPrettierDependencies')
-const getTypescriptDependencies = require('./calculateDependencies/getTypescriptDependencies')
-const getWebpackDependencies = require('./calculateDependencies/getWebpackDependencies')
+const getBabelDependencies = require('./dependencies/getBabelDependencies')
+const getEslintDependencies = require('./dependencies/getEslintDependencies')
+const getPrettierDependencies = require('./dependencies/getPrettierDependencies')
+const getTypescriptDependencies = require('./dependencies/getTypescriptDependencies')
+const getWebpackDependencies = require('./dependencies/getWebpackDependencies')
 const logger = require('./utils/logger')
 const manageDependencies = require('./utils/manageDependencies')
-const moduleHelper = require('./helpers/moduleHelper')
 
 function calculateDependencies(options) {
   let dependenciesArgs = [
-    ...getBabelDependencies(options),
-    ...getEslintDependencies(options),
-    ...getPrettierDependencies(options),
-    ...getTypescriptDependencies(options),
-    ...getWebpackDependencies(options),
-    ...(moduleHelper.hasReact
-      ? require('./calculateDependencies/getReactDependencies')(options)
+    ...(options.babel ? getBabelDependencies(options) : []),
+    ...(options.eslint ? getEslintDependencies(options) : []),
+    ...(options.prettier ? getPrettierDependencies(options) : []),
+    ...(options.typescript ? getTypescriptDependencies(options) : []),
+    ...(options.webpack ? getWebpackDependencies(options) : []),
+    ...(options.react
+      ? require('./dependencies/getReactDependencies')(options)
       : []),
   ]
 
