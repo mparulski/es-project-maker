@@ -16,7 +16,7 @@ const options = {
   typescript: args['typescript'] !== false,
   typescriptConfig: getConfig(args['typescriptConfig']),
   webpack: args['webpack'] !== false,
-  webpackConfig: getConfig(args['webpackConfig']),
+  webpackConfig: args['webpackConfig'],
   noDeps: args['noDeps'] === true,
   verbose: args['verbose'] === true,
 }
