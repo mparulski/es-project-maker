@@ -4,18 +4,12 @@ const calculateConfigs = require('./calculateConfigs')
 const calculateDependencies = require('./calculateDependencies')
 const calculateTasks = require('./calculateTasks')
 const logger = require('./utils/logger')
-const moduleHelper = require('./helpers/moduleHelper')
 
-const path = require('path')
-
-function init(projectConfig, options) {
+function run(options) {
   options = {
     ...options,
     projectRootDir: process.cwd(),
-    esProjectMakerScriptsDir: path.resolve(__dirname),
   }
-
-  moduleHelper(projectConfig)
 
   options.verbose && logger.debug('Runtime options:' + JSON.stringify(options))
 
@@ -24,4 +18,4 @@ function init(projectConfig, options) {
   calculateTasks(options)
 }
 
-module.exports = init
+module.exports = run

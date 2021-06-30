@@ -1,33 +1,28 @@
 #!/usr/bin/env node
 'use strict'
 
-const fs = require('fs')
-const path = require('path')
-const logger = require('../src/scripts/utils/logger')
 const args = require('minimist')(process.argv.slice(2))
-
-const init = require('../src/scripts/init')
-
-let projectConfig = {}
-
-if (
-  args['config'] === undefined ||
-  args['config'] === null ||
-  !fs.existsSync(args['config'])
-) {
-  logger.info(
-    'Configuration file has not been set.\n',
-    'It can be specified as a configuration file path in --config parameter',
-  )
-} else {
-  projectConfig = require(path.resolve(args['config']))
-}
+const logger = require('../src/scripts/utils/logger')
+const getConfig = require('../src/scripts/utils/getConfig')
 
 const options = {
-  verbose: args['verbose'] === true,
+  babel: args['babel'] !== false,
+  babelConfig: getConfig(args['babelConfig']),
+  eslint: args['eslint'] !== false,
+  eslintConfig: getConfig(args['eslintConfig']),
+  prettier: args['prettier'] !== false,
+  prettierConfig: getConfig(args['prettierConfig']),
+  react: args['react'] !== false,
+  typescript: args['typescript'] !== false,
+  typescriptConfig: getConfig(args['typescriptConfig']),
+  webpack: args['webpack'] !== false,
+  webpackConfig: getConfig(args['webpackConfig']),
   noDeps: args['noDeps'] === true,
+  verbose: args['verbose'] === true,
 }
 
-init(projectConfig, options)
+logger.info('Runtime options:', JSON.stringify(options))
+
+require('../src/scripts/run')(options)
 
 process.exit(0)
