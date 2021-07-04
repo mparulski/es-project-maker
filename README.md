@@ -5,82 +5,75 @@ We don't really plan on documenting or testing it well because it's specific to 
 
 ## How to run 
 ```
-npx @mparulski/es-project-maker --config=<path_to_project_config.js>
+npx @mparulski/es-project-maker
 ```
 eg.
 ```
-npx @mparulski/es-project-maker --config=config/application.config.dev.js
+npx @mparulski/es-project-maker --babelConfig=<secial_babel_options_config.js> --typescript=false --verbose
 ```
 
-### args
-| arg | required | default | desc |
-|-----|----------|---------| -----|
-| --babel        | No | true | if it is set to `false` then do not generate the configuration file and do not install dependencies |
-| --babelConfig  | No |      | path to project config options (described below) |
-| --noDeps  | No |        | do not install dependencies |
-| --verbose | No |        | would really be useful to enable end users to diagnose their own issues |
+Run `@mparulski/es-project-maker` with passed babel options in config, disable typescript and run verbose mode
 
-### project config
+### args
+| arg                | required | default | desc |
+|--------------------|----------|---------| -----|
+| --babel            | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --babelConfig      | No       |       | path to project config options (described below) |
+| --eslint           | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --eslintConfig     | No       |       | path to project config options (described below) |
+| --prettier         | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --prettierConfig   | No       |       | path to project config options (described below) |
+| --react            | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --typescript       | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --typescriptConfig | No       |       | path to project config options (described below) |
+| --webpack          | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --webpackConfig    | No       |       | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --noDeps           | No       | false | do not install dependencies |
+| --verbose          | No       | false | would really be useful to enable end users to diagnose their own issues |
+
+### project configs
+
+- For args: 
+  - --babelConfig
+  - --eslintConfig
+  - --prettierConfig
+  - --typescriptConfig
+
+config's file is a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config:
 
 ```js
-module.exports = {
     /*
-     * The module is always enabled
-     *
-     * Values are passed in the body of that module and they extend or overwriting default values
-     * By the default install dependencies and add to package.json/package-lock.json
+     * Values passed in the body of callback configuration will extend, delete or overwrite default values
      * 
+     * babelConfig
+     *
      * Configuration body eg.
      * "presets": [], it will be concatenated to the base presets
      * "plugins": [], it will be concatenated to the base plugins
-     */
-  "babel": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
-    /*
-     * The module is always enabled
-     *
-     * Values are passed in the body of that module and they extend or overwriting default values
-     * By the default install dependencies and add to package.json/package-lock.json
      * 
-     * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/eslint.html
-     */
-  "eslint": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
-    /*
-     * The module is always enabled
-     *
-     * Values are passed in the body of that module and they extend or overwriting default values
-     * By the default install dependencies and add to package.json/package-lock.json
+     * eslintConfig (How to configure in IntelliJ: https://www.jetbrains.com/help/idea/eslint.html)
      * 
-     * How to configure in IntelliJ: https://www.jetbrains.com/help/idea/prettier.html#ws_prettier_install
-     */
-  "prettier": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
-    /*
-     * The module is enabled when is passed in projct-config like 
-     *      module.exports = {
-     *          react: {}
-     *      }
-     *
+     * prettierConfig (How to configure in IntelliJ: https://www.jetbrains.com/help/idea/prettier.html#ws_prettier_install)
      * if that key exists, then:  
      * - install dependencies and add dependencies to package.json/package-lock.json
      * - enables New JSX Transform in babel configuration
      * - enables ReactJS/JSX options in prettier configuration
-     */
-  "react": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
-    /*
-     * The module is always enabled
      *
-     * Values are passed in the body of that module and they extend or overwriting default values
-     * By the default install dependencies and add to package.json/package-lock.json
+     * typescriptConfig
      */
-  "typescript": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
-    /*
-     * The module is always enabled
-     *
-     * Values are passed in the body of that module and they extend or overwriting default values
-     * By the default install dependencies and add to package.json/package-lock.json
-     */
-  "webpack": (config) => { return config}, // It's a function that arg (named 'config') is config calculated by es-project-maker with std settings. It must return config.
-}
+
+module.exports = (config) => { return config }
 ```
+
+- For arg:
+
+  - --webpackConfig
+
+- For 
+  - --react=true
+    - install dependencies and add dependencies to package.json/package-lock.json
+    - enables New JSX Transform in babel configuration
+    - enables ReactJS/JSX options in prettier configuration
 
 ### How to run webpack build
 
