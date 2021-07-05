@@ -11,7 +11,7 @@ function calculateConfigBabel(options) {
 
   let configValues = require('../../config/babel/babel.config')
 
-  if (options.react) {
+  if (!options.noReact) {
     configValues.presets = [
       ...configValues.presets,
       ...require('../../config/babel/babel-react.config').presets,

@@ -11,7 +11,7 @@ function calculateConfigPrettier(options) {
 
   let configValues = require('../../config/prettier/base.prettier.config')
 
-  if (options.react) {
+  if (!options.noReact) {
     configValues = {
       ...configValues,
       ...require('../../config/prettier/react.prettier.config'),

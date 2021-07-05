@@ -3,7 +3,7 @@
 function getBabelDependencies(options) {
   let dependencies = require('../../packages/babel').base
 
-  if (options.react) {
+  if (!options.noReact) {
     dependencies = [...dependencies, ...require('../../packages/babel').react]
   }
 

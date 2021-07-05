@@ -10,13 +10,13 @@ const manageDependencies = require('./utils/manageDependencies')
 
 function calculateDependencies(options) {
   let dependenciesArgs = [
-    ...(options.babel ? getBabelDependencies(options) : []),
-    ...(options.eslint ? getEslintDependencies(options) : []),
-    ...(options.prettier ? getPrettierDependencies(options) : []),
-    ...(options.typescript ? getTypescriptDependencies(options) : []),
+    ...(!options.noBabel ? getBabelDependencies(options) : []),
+    ...(!options.noEslint ? getEslintDependencies(options) : []),
+    ...(!options.noPrettier ? getPrettierDependencies(options) : []),
+    ...(!options.noTypescript ? getTypescriptDependencies(options) : []),
     ...(options.webpackDevConfig ? getWebpackDependencies(options) : []),
     ...(options.webpackProdConfig ? getWebpackDependencies(options) : []),
-    ...(options.react
+    ...(!options.noReact
       ? require('./dependencies/getReactDependencies')(options)
       : []),
   ]

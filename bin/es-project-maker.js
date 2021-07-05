@@ -5,22 +5,24 @@ const args = require('minimist')(process.argv.slice(2))
 const logger = require('../src/scripts/utils/logger')
 const getConfig = require('../src/scripts/utils/getConfig')
 
+const isTrue = val => val === true
+
 const options = {
-  babel: args['babel'] !== false,
   babelConfig: getConfig(args['babelConfig']),
-  eslint: args['eslint'] !== false,
   eslintConfig: getConfig(args['eslintConfig']),
-  prettier: args['prettier'] !== false,
   prettierConfig: getConfig(args['prettierConfig']),
-  react: args['react'] !== false,
-  typescript: args['typescript'] !== false,
   typescriptConfig: getConfig(args['typescriptConfig']),
-  webpack: args['webpack'] !== false,
   webpackDevConfig: args['webpackDevConfig'],
   webpackProdConfig: args['webpackProdConfig'],
-  noDeps: args['noDeps'] === true,
-  noTasks: args['noTasks'] === true,
-  verbose: args['verbose'] === true,
+  noBabel: isTrue(args['noBabel']),
+  noDeps: isTrue(args['noDeps']),
+  noEslint: isTrue(args['noEslint']),
+  noPrettier: isTrue(args['noPrettier']),
+  noReact: isTrue(args['noReact']),
+  noTasks: isTrue(args['noTasks']),
+  noTypescript: isTrue(args['noTypescript']),
+  noWebpack: isTrue(args['noWebpack']),
+  verbose: isTrue(args['verbose']),
 }
 
 logger.info('Runtime options:', JSON.stringify(options))
