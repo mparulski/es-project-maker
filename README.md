@@ -27,7 +27,8 @@ Run `@mparulski/es-project-maker` with passed babel options in config, disable t
 | --typescript       | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
 | --typescriptConfig | No       |       | path to project config options (described below) |
 | --webpack          | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
-| --webpackConfig    | No       |       | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --webpackDevConfig | No       |       | path to webpack dev config |
+| --webpackProdConfig| No       |       | path to webpack prod config |
 | --noDeps           | No       | false | do not install dependencies |
 | --noTasks          | No       | false | do not tasks to package.json |
 | --verbose          | No       | false | would really be useful to enable end users to diagnose their own issues |
@@ -76,11 +77,11 @@ module.exports = (config) => { return config }
     - enables New JSX Transform in babel configuration
     - enables ReactJS/JSX options in prettier configuration
 
-### How to run webpack build
+### webpack local build
+Run npm script "start"
 
-1. Set webpack config in project config
-2. Run es-project-maker
-3. Run npm script "build" 
+### webpack production build
+Run npm script "build" 
 
 ## Inspired 
 This is inspired by `react-scripts` and `kcd-scripts`
