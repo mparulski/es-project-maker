@@ -18,6 +18,7 @@ const options = {
   webpack: args['webpack'] !== false,
   webpackConfig: args['webpackConfig'],
   noDeps: args['noDeps'] === true,
+  noTasks: args['noTasks'] === true,
   verbose: args['verbose'] === true,
 }
 

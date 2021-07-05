@@ -29,6 +29,7 @@ Run `@mparulski/es-project-maker` with passed babel options in config, disable t
 | --webpack          | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
 | --webpackConfig    | No       |       | if it is set to `false` then do not generate the configuration file and do not install dependencies |
 | --noDeps           | No       | false | do not install dependencies |
+| --noTasks          | No       | false | do not tasks to package.json |
 | --verbose          | No       | false | would really be useful to enable end users to diagnose their own issues |
 
 ### project configs

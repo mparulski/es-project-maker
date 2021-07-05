@@ -15,7 +15,7 @@ function run(options) {
 
   !options.noDeps && calculateDependencies(options)
   calculateConfigs(options)
-  calculateTasks(options)
+  !options.noTasks && calculateTasks(options)
 }
 
 module.exports = run
