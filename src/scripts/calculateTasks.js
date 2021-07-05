@@ -10,7 +10,13 @@ function calculateTasks(options) {
 
   const scripts = {}
 
-  scripts.build = 'webpack serve --config=webpack.config.js'
+  if(options.webpackDevConfig) {
+    scripts.start = 'webpack serve --config=webpack.dev.config.js'
+  }
+
+  if(options.webpackProdConfig) {
+    scripts.build = 'webpack --config=webpack.prod.config.js'
+  }
 
   const packageJson = JSON.parse(readFile(packageJsonFile))
   touchJSON(packageJsonFile, merge(packageJson, {scripts}))

@@ -4,21 +4,43 @@ const path = require('path')
 const logger = require('../utils/logger')
 const touch = require('../utils/touch')
 const webpackDevConfig = require('../../config/webpack/webpack.dev.config')
+const webpackProdConfig = require('../../config/webpack/webpack.prod.config')
 
-const CONFIG_FILENAME = 'webpack.config.js'
+const CONFIG_DEV_FILENAME = 'webpack.dev.config.js'
+const CONFIG_PROD_FILENAME = 'webpack.prod.config.js'
 
-function calculateConfigWebpack(options) {
-  logger.info('Start building the ' + CONFIG_FILENAME)
+const calculateDevConfigWebpack = options => {
+    const propsAndHelpers = {
+        configFilename: CONFIG_DEV_FILENAME,
+        configContent: webpackDevConfig(options.webpackDevConfig),
+        options
+    }
 
-  const file = options.projectRootDir + path.sep + CONFIG_FILENAME
-  const content = touch({
-    file,
-    content: webpackDevConfig(options.webpackConfig)
-  })
-
-  options.verbose && logger.debug(CONFIG_FILENAME, content)
-
-  logger.info(CONFIG_FILENAME + ' was built')
+    calculateConfigFile(propsAndHelpers)
 }
 
-module.exports = calculateConfigWebpack
+const calculateProdConfigWebpack = options => {
+    const propsAndHelpers = {
+        configFilename: CONFIG_PROD_FILENAME,
+        configContent: webpackProdConfig(options.webpackProdConfig),
+        options
+    }
+
+    calculateConfigFile(propsAndHelpers)
+}
+
+const calculateConfigFile = ({configFilename, configContent, options}) => {
+    logger.info('Start building the ' + configFilename)
+
+    const file = options.projectRootDir + path.sep + configFilename
+    const content = touch({
+        file,
+        content: configContent
+    })
+
+    options.verbose && logger.debug(configFilename, content)
+
+    logger.info(configFilename + ' was built')
+}
+
+module.exports = {calculateDevConfigWebpack, calculateProdConfigWebpack}
