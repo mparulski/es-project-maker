@@ -71,11 +71,11 @@ module.exports = (config) => { return config }
 
   - --webpackConfig
 
-- For 
-  - --react=true
+- If react is enabled:
     - install dependencies and add dependencies to package.json/package-lock.json
-    - enables New JSX Transform in babel configuration
-    - enables ReactJS/JSX options in prettier configuration
+    - enable rules for eslint
+    - enable New JSX Transform in babel configuration
+    - enable ReactJS/JSX options in prettier configuration
 
 ### webpack local build
 Run npm script "start"
