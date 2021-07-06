@@ -3,7 +3,7 @@
 const path = require('path')
 const logger = require('../utils/logger')
 const touch = require('../utils/touch')
-const webpackConfigBuilder = require('../../config/webpack/webpack.dev.config')
+const webpackConfigBuilder = require('../../config/webpack/webpackConfigBuilder')
 
 const CONFIG_DEV_FILENAME = 'webpack.dev.config.js'
 const CONFIG_PROD_FILENAME = 'webpack.prod.config.js'
