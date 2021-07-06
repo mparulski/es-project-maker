@@ -9,7 +9,9 @@ const CONFIG_FILENAME = '.eslintrc.json'
 function calculateConfigEslint(options) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
-  let configValues = require('../../config/eslint/eslint.config')(options.react)
+  let configValues = require('../../config/eslint/eslint.config')(
+    !options.noReact,
+  )
 
   const content = options.eslintConfig(configValues)
 

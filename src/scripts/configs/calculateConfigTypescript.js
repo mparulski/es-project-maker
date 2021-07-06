@@ -11,7 +11,7 @@ function calculateConfigTypescript(options) {
 
   let configValues = require('../../config/typescript/base.typescript.config')
 
-  if (options.react) {
+  if (!options.noReact) {
     configValues.compilerOptions = {
       ...configValues.compilerOptions,
       ...require('../../config/typescript/react.typescript.config')

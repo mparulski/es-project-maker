@@ -17,16 +17,16 @@ Run `@mparulski/es-project-maker` with passed babel options in config, disable t
 ### args
 | arg                | required | default | desc |
 |--------------------|----------|---------| -----|
-| --babel            | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --noBabel          | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --babelConfig      | No       |       | path to project config options (described below) |
-| --eslint           | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --noEslint         | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --eslintConfig     | No       |       | path to project config options (described below) |
-| --prettier         | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --noPrettier       | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --prettierConfig   | No       |       | path to project config options (described below) |
-| --react            | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
-| --typescript       | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --noReact          | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
+| --noTypescript     | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --typescriptConfig | No       |       | path to project config options (described below) |
-| --webpack          | No       | true  | if it is set to `false` then do not generate the configuration file and do not install dependencies |
+| --noWebpack        | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --webpackDevConfig | No       |       | path to webpack dev config |
 | --webpackProdConfig| No       |       | path to webpack prod config |
 | --noDeps           | No       | false | do not install dependencies |
