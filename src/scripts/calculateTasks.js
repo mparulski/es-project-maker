@@ -10,11 +10,16 @@ function calculateTasks(options) {
 
   const scripts = {}
 
-  if(options.webpackDevConfig) {
-    scripts.start = 'webpack serve --config=webpack.dev.config.js'
+  if (!options.noBabel && options.noWebpack) {
+    scripts.build = 'babel -w src/ -d dist -s'
   }
 
-  if(options.webpackProdConfig) {
+  if (!options.noTypescript && options.noWebpack) {
+    scripts.build = 'tsc'
+  }
+
+  if (!options.noWebpack) {
+    scripts.start = 'webpack serve --config=webpack.dev.config.js'
     scripts.build = 'webpack --config=webpack.prod.config.js'
   }
 
