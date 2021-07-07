@@ -77,6 +77,38 @@ module.exports = (config) => { return config }
     - enable New JSX Transform in babel configuration
     - enable ReactJS/JSX options in prettier configuration
 
+
+### webpack configuration example
+
+```
+const path = require("path")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = () => ({
+    "entry": {index: path.resolve(__dirname, "../src/js/appInit.js")},
+    "output": {
+        "path": path.resolve(__dirname, "../src/js-dist"),
+        "filename": "app.bundle.js"
+    },
+    "module": {
+        "rules": [            
+            {
+                "test": /\.(png|svg|jpg|jpeg|gif|woff|eot|ttf)$/i,
+                "type": 'asset/inline',
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "../src/templates/index.html")
+        })
+      ],
+    "resolve": {
+        "extensions": [".js", ".jsx"]
+    }
+})
+```
+
 ### webpack local build
 Run npm script "start"
 
