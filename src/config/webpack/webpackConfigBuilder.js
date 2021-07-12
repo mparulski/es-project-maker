@@ -1,15 +1,10 @@
-const webpackConfigBuilder = makerConfigPath => projectConfigPath =>
-  '#!/usr/bin/env node\n' +
-  "'use strict';\n" +
-  "const path = require('path');\n" +
-  'const {merge} = require("webpack-merge");\n' +
-  '\n' +
-  'module.exports = () => merge(require("' +
-  makerConfigPath +
-  '") ' +
-  (projectConfigPath
-    ? ', require(path.resolve("' + projectConfigPath + '"))'
-    : '') +
-  ')'
+const webpackConfigBuilder = options => makerConfigPath => projectConfigPath =>
+  `#!/usr/bin/env node
+  
+  'use strict';
+  
+  const path = require('path');
+  const {merge} = require("webpack-merge");
+  module.exports = () => merge(require("${makerConfigPath}"), require(path.resolve("${projectConfigPath}"))(${options}))`
 
 module.exports = webpackConfigBuilder

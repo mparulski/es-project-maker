@@ -84,7 +84,7 @@ module.exports = (config) => { return config }
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
+module.exports = options => {
     "entry": {index: path.resolve(__dirname, "../src/js/appInit.js")},
     "output": {
         "path": path.resolve(__dirname, "../src/js-dist"),
