@@ -1,13 +1,14 @@
 module.exports = {
   compilerOptions: {
-    allowJs: false,
+    allowJs: true,
     allowSyntheticDefaultImports: true,
     alwaysStrict: true,
     checkJs: true,
     declaration: true,
+    isolatedModules: true,
     module: 'es2020',
     moduleResolution: 'node',
-    noEmit: false,
+    noEmit: true,
     noFallthroughCasesInSwitch: true,
     noImplicitAny: true,
     noImplicitReturns: true,
