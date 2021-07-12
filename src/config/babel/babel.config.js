@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
+    '@babel/typescript',
     [
-      '@babel/typescript',
       '@babel/preset-env',
       {
         modules: false,

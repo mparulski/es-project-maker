@@ -9,7 +9,7 @@ const CONFIG_DEV_FILENAME = 'webpack.dev.config.js'
 const CONFIG_PROD_FILENAME = 'webpack.prod.config.js'
 
 const calculateDevConfigWebpack = options => {
-  const webpackConfig = webpackConfigBuilder(options)(
+  const webpackConfig = webpackConfigBuilder(options.projectRootDir)(
     '@mparulski/es-project-maker-webpack/config/webpack.dev.config',
   )
 
@@ -23,7 +23,7 @@ const calculateDevConfigWebpack = options => {
 }
 
 const calculateProdConfigWebpack = options => {
-  const webpackConfig = webpackConfigBuilder(options)(
+  const webpackConfig = webpackConfigBuilder(options.projectRootDir)(
     '@mparulski/es-project-maker-webpack/config/webpack.prod.config',
   )
 

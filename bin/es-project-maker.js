@@ -25,8 +25,6 @@ const options = {
   verbose: isTrue(args['verbose']),
 }
 
-logger.info('Runtime options:', JSON.stringify(options))
-
 require('../src/scripts/run')(options)
 
 process.exit(0)

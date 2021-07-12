@@ -14,8 +14,8 @@ function calculateConfigs(options) {
   !options.noEslint && calculateConfigEslint(options)
   !options.noPrettier && calculateConfigPrettier(options)
   !options.noTypescript && calculateConfigTypescript(options)
-  !options.noWebpackDevConfig && calculateDevConfigWebpack(options)
-  !options.noWebpackProdConfig && calculateProdConfigWebpack(options)
+  !options.noWebpack && calculateDevConfigWebpack(options)
+  !options.noWebpack && calculateProdConfigWebpack(options)
 }
 
 module.exports = calculateConfigs

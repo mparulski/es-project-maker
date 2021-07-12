@@ -11,7 +11,7 @@ function run(options) {
     projectRootDir: process.cwd(),
   }
 
-  options.verbose && logger.debug('Runtime options:' + JSON.stringify(options))
+  logger.debug('Runtime options:' + JSON.stringify(options))
 
   !options.noDeps && calculateDependencies(options)
   calculateConfigs(options)
