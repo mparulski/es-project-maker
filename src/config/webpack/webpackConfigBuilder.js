@@ -3,13 +3,12 @@ const path = require('path')
 const getResolvedPath = pathToResolve =>
   path.resolve(pathToResolve).replace(/\\/g, '/')
 
-const webpackConfigBuilder =
-  projectRootDir => makerConfigPath => projectConfigPath => {
+const webpackConfigBuilder = makerConfigPath => projectConfigPath => {
     const projectConfig =
       projectConfigPath !== undefined
         ? `require(path.resolve("${getResolvedPath(
             projectConfigPath,
-          )}"))("${getResolvedPath(projectRootDir)}")`
+          )}"))(env)`
         : '{}'
 
     return `#!/usr/bin/env node 
@@ -18,7 +17,7 @@ const webpackConfigBuilder =
 
 const path = require('path');
 const {merge} = require("webpack-merge");
-module.exports = () => merge(
+module.exports = env => merge(
     require("${makerConfigPath}"), 
     ${projectConfig})`
   }

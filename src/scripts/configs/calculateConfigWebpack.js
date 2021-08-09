@@ -23,7 +23,7 @@ const calculateDevConfigWebpack = options => {
 }
 
 const calculateProdConfigWebpack = options => {
-  const webpackConfig = webpackConfigBuilder(options.projectRootDir)(
+  const webpackConfig = webpackConfigBuilder(
     '@mparulski/es-project-maker-webpack/config/webpack.prod.config',
   )
 
