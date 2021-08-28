@@ -10,10 +10,10 @@ const {
 } = require('./configs/calculateConfigWebpack')
 
 function calculateConfigs(options) {
-  !options.noBabel && calculateConfigBabel(options)
+  calculateConfigBabel(options)
   !options.noEslint && calculateConfigEslint(options)
   !options.noPrettier && calculateConfigPrettier(options)
-  !options.noTypescript && calculateConfigTypescript(options)
+  calculateConfigTypescript(options)
   !options.noWebpack && calculateDevConfigWebpack(options)
   !options.noWebpack && calculateProdConfigWebpack(options)
 }

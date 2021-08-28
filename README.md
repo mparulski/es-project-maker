@@ -9,7 +9,7 @@ npx @mparulski/es-project-maker
 ```
 eg.
 ```
-npx @mparulski/es-project-maker --babelConfig=<secial_babel_options_config.js> --typescript=false --verbose
+npx @mparulski/es-project-maker --babelConfig=<secial_babel_options_config.js> --verbose
 ```
 
 Run `@mparulski/es-project-maker` with passed babel options in config, disable typescript and run verbose mode
@@ -17,14 +17,12 @@ Run `@mparulski/es-project-maker` with passed babel options in config, disable t
 ### args
 | arg                | required | default | desc |
 |--------------------|----------|---------| -----|
-| --noBabel          | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --babelConfig      | No       |       | path to project config options (described below) |
 | --noEslint         | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --eslintConfig     | No       |       | path to project config options (described below) |
 | --noPrettier       | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --prettierConfig   | No       |       | path to project config options (described below) |
 | --noReact          | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
-| --noTypescript     | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --typescriptConfig | No       |       | path to project config options (described below) |
 | --noWebpack        | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --webpackDevConfig | No       |       | path to webpack dev config |

@@ -14,13 +14,11 @@ const options = {
   typescriptConfig: getConfig(args['typescriptConfig']),
   webpackDevConfig: args['webpackDevConfig'],
   webpackProdConfig: args['webpackProdConfig'],
-  noBabel: isTrue(args['noBabel']),
   noDeps: isTrue(args['noDeps']),
   noEslint: isTrue(args['noEslint']),
   noPrettier: isTrue(args['noPrettier']),
   noReact: isTrue(args['noReact']),
   noTasks: isTrue(args['noTasks']),
-  noTypescript: isTrue(args['noTypescript']),
   noWebpack: isTrue(args['noWebpack']),
   verbose: isTrue(args['verbose']),
 }

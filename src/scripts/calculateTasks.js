@@ -10,17 +10,13 @@ function calculateTasks(options) {
 
   const scripts = {}
 
-  if (!options.noBabel && options.noWebpack) {
-    scripts.build = 'babel -w src/ -d dist -s'
-  }
+  scripts['build:babel'] = 'babel -w src/ -d dist -s'
 
-  if (!options.noTypescript && options.noWebpack) {
-    scripts.build = 'tsc'
-  }
+  scripts['build:ts'] = 'tsc'
 
   if (!options.noWebpack) {
     scripts.start = 'webpack serve --config=webpack.dev.config.js'
-    scripts.build = 'webpack --config=webpack.prod.config.js'
+    scripts['build:webpack'] = 'webpack --config=webpack.prod.config.js'
   }
 
   const packageJson = JSON.parse(readFile(packageJsonFile))
