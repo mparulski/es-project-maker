@@ -24,11 +24,9 @@ function manageDependencies(dependencies, options) {
 
   addDependencies(packageTypeProd, '--save-prod', options.verbose)
 
-  const packageTypeDev = ['--save-dev'].concat(
-    prepareListOfPackagesToInstall(
-      allPackages.filter(
-        ([packageName, details]) => details.type === '--save-dev',
-      ),
+  const packageTypeDev = prepareListOfPackagesToInstall(
+    allPackages.filter(
+      ([packageName, details]) => details.type === '--save-dev',
     ),
   )
 
