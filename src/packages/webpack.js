@@ -10,7 +10,7 @@ module.exports = {
     {'css-loader': {version: '6.2.0', type: '--save-dev'}},
     {
       '@mparulski/es-project-maker-webpack': {
-        version: '0.5.0',
+        version: '0.6.0',
         type: '--save-dev',
       },
     },
