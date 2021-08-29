@@ -14,8 +14,7 @@ function calculateDependencies(options) {
     ...(!options.noEslint ? getEslintDependencies(options) : []),
     ...(!options.noPrettier ? getPrettierDependencies(options) : []),
     ...getTypescriptDependencies(options),
-    ...(options.webpackDevConfig ? getWebpackDependencies(options) : []),
-    ...(options.webpackProdConfig ? getWebpackDependencies(options) : []),
+    ...(options.noWebpack ? getWebpackDependencies(options) : []),
     ...(!options.noReact
       ? require('./dependencies/getReactDependencies')(options)
       : []),
