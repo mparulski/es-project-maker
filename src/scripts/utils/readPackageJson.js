@@ -9,4 +9,4 @@ function readPackageJson(options) {
   return JSON.parse(readFile(packageJsonFile))
 }
 
-export default readPackageJson
+module.exports = readPackageJson
