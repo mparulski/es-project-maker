@@ -3,10 +3,10 @@
 const path = require('path')
 const readFile = require('./readFile')
 
-function read(options) {
+function readPackageJson(options) {
   const packageJsonFile = options.projectRootDir + path.sep + 'package.json'
 
   return JSON.parse(readFile(packageJsonFile))
 }
 
-export {read}
+export default readPackageJson

@@ -3,7 +3,7 @@
 const semver = require('semver')
 const addDependencies = require('./addDependencies')
 const logger = require('./logger')
-const {read} = require('./packageJson')
+const readPackageJson = require('./readPackageJson')
 
 function getInstalledPackages(packageJson) {
   let installedProdPackages = new Map()
