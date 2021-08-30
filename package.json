@@ -34,7 +34,8 @@
     "@mparulski/es-project-maker-webpack": "0.6.0",
     "cross-spawn": "7.0.3",
     "deepmerge": "4.2.2",
-    "minimist": "1.2.5"
+    "minimist": "1.2.5",
+    "semver": "7.3.5"
   },
   "devDependencies": {
     "prettier": "2.3.2"
