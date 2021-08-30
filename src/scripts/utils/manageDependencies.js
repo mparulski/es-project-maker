@@ -48,7 +48,7 @@ function manageDependencies(dependencies, options) {
     Object.entries(dependency),
   )
 
-  const installedPackages = getInstalledPackages(read(options))
+  const installedPackages = getInstalledPackages(readPackageJson(options))
 
   const packageTypeProd = prepareListOfPackagesToInstall(
     allPackages
