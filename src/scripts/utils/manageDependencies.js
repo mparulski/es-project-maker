@@ -73,7 +73,7 @@ function manageDependencies(dependencies, options) {
   )
 
   options.verbose &&
-    logger.debug('"devDependencies"" to install:', packageTypeProd)
+    logger.debug('"devDependencies"" to install:', packageTypeDev)
 
   isNotEmpty(packageTypeDev) &&
     addDependencies(packageTypeDev, '--save-dev', options.verbose)
