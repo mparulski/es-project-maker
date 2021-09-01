@@ -3,7 +3,6 @@ module.exports = {
     {'@babel/cli': {version: '7.14.8', type: '--save-dev'}},
     {'@babel/core': {version: '7.15.0', type: '--save-dev'}},
     {'@babel/preset-env': {version: '7.15.0', type: '--save-dev'}},
-    {'@babel/preset-typescript': {version: '7.15.0', type: '--save-dev'}},
     {'@babel/runtime': {version: '7.15.3', type: '--save-dev'}},
     {
       '@babel/plugin-proposal-throw-expressions': {

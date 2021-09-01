@@ -7,12 +7,12 @@ const readPackageJson = require('./readPackageJson')
 
 function getInstalledPackages(packageJson) {
   let installedProdPackages = new Map()
-  if (packageJson['dependencies'] !== null) {
+  if (packageJson['dependencies'] !== undefined) {
     installedProdPackages = new Map(Object.entries(packageJson['dependencies']))
   }
 
   let installedDevPackages = new Map()
-  if (packageJson['devDependencies'] !== null) {
+  if (packageJson['devDependencies'] !== undefined) {
     installedDevPackages = new Map(
       Object.entries(packageJson['devDependencies']),
     )
