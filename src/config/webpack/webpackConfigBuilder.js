@@ -6,7 +6,7 @@ const getResolvedPath = pathToResolve =>
 const webpackConfigBuilder = makerConfigPath => relativeConfigPath => {
   const projectConfig =
     relativeConfigPath !== undefined
-      ? `require(path.resolve(".//${relativeConfigPath}"))(env)`
+      ? `require(path.resolve("./${getResolvedPath(relativeConfigPath)}"))(env)`
       : '{}'
 
   return `#!/usr/bin/env node 
