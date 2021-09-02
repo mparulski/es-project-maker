@@ -1,6 +1,6 @@
 {
   "name": "@mparulski/es-project-maker",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "Common scripts for projects",
   "engines": {
     "node": ">=14.15.0"
