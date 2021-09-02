@@ -1,7 +1,6 @@
-const path = require('path')
+'use strict'
 
-const getResolvedPath = pathToResolve =>
-  path.resolve(pathToResolve).replace(/\\/g, '/')
+const getResolvedPath = pathToResolve => pathToResolve.replace(/\\/g, '/')
 
 const webpackConfigBuilder = makerConfigPath => relativeConfigPath => {
   const projectConfig =
