@@ -1,4 +1,6 @@
 # CHANGELOG
+## 0.8.0 
+- feat: change typescript compile options
 
 ## 0.7.0
 - feat: update @babel/cli to 7.15.4
