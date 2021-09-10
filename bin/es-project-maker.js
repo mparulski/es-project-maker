@@ -2,7 +2,6 @@
 'use strict'
 
 const args = require('minimist')(process.argv.slice(2))
-const logger = require('../src/scripts/utils/logger')
 const getConfig = require('../src/scripts/utils/getConfig')
 
 const isTrue = val => val === true

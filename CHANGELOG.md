@@ -1,7 +1,8 @@
 # CHANGELOG
 
-## 
-- Upgrade prettier to 2.4.0 (#50)
+## 0.9.0
+- feat: upgrade prettier to 2.4.0 (#50)
+- feat: add extra options to typescript config
 
 ## 0.8.0 
 - feat: change typescript compile options
