@@ -2,7 +2,7 @@ module.exports = {
   base: [
     {'@babel/cli': {version: '7.15.4', type: '--save-dev'}},
     {'@babel/core': {version: '7.15.5', type: '--save-dev'}},
-    {'@babel/preset-env': {version: '7.15.4', type: '--save-dev'}},
+    {'@babel/preset-env': {version: '7.15.6', type: '--save-dev'}},
     {'@babel/runtime': {version: '7.15.4', type: '--save-dev'}},
     {
       '@babel/plugin-proposal-throw-expressions': {

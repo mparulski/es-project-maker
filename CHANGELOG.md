@@ -3,6 +3,11 @@
 ## 0.9.0
 - feat: upgrade prettier to 2.4.0 (#50)
 - feat: add extra options to typescript config
+- feat: update @babel/preset-env to 7.15.6
+- feat: update typescript to 4.4.3
+- feat: update @types/react to 17.0.20
+- feat: update webpack to 5.52.1
+- feat: update webpack-dev-server to 4.2.0
 
 ## 0.8.0 
 - feat: change typescript compile options
