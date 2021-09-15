@@ -1,7 +1,9 @@
 # CHANGELOG
 
-## 
+## 0.10.0
+- feat: change noTasks to addTasks (45b1181)
 - fix: incorrect external options for typescript config builder (dc11f13)
+- chore: change log info for deps (5f11996)
 
 ## 0.9.0
 - feat: upgrade prettier to 2.4.0 (#50)
