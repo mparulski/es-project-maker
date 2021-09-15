@@ -20,7 +20,7 @@ function calculateDependencies(options) {
       : []),
   ]
 
-  logger.info('List of dependencies: ', dependenciesArgs)
+  options.verbose && logger.info('List of dependencies: ', dependenciesArgs)
 
   manageDependencies(dependenciesArgs, options)
 }
