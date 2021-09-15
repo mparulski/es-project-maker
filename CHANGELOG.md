@@ -1,4 +1,6 @@
 # CHANGELOG
+## 0.11.0
+- feat: upgrade @mparulski/es-project-maker-webpack to 0.7.0
 
 ## 0.10.0
 - feat: change noTasks to addTasks (45b1181)
