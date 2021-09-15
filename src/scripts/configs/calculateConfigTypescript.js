@@ -19,7 +19,7 @@ function calculateConfigTypescript(options) {
     }
   }
 
-  const content = options.prettierConfig(configValues)
+  const content = options.typescriptConfig(configValues)
 
   const fileContent = touch(
     options.projectRootDir + path.sep + CONFIG_FILENAME,
