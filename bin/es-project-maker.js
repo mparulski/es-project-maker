@@ -7,6 +7,7 @@ const getConfig = require('../src/scripts/utils/getConfig')
 const isTrue = val => val === true
 
 const options = {
+  addTasks: isTrue(args['addTasks']),
   babelConfig: getConfig(args['babelConfig']),
   eslintConfig: getConfig(args['eslintConfig']),
   prettierConfig: getConfig(args['prettierConfig']),
@@ -17,7 +18,6 @@ const options = {
   noEslint: isTrue(args['noEslint']),
   noPrettier: isTrue(args['noPrettier']),
   noReact: isTrue(args['noReact']),
-  noTasks: isTrue(args['noTasks']),
   noWebpack: isTrue(args['noWebpack']),
   verbose: isTrue(args['verbose']),
 }

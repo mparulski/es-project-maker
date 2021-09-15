@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 
+- fix: incorrect external options for typescript config builder (dc11f13)
+
 ## 0.9.0
 - feat: upgrade prettier to 2.4.0 (#50)
 - feat: add extra options to typescript config

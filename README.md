@@ -17,6 +17,7 @@ Run `@mparulski/es-project-maker` with passed babel options in config, disable t
 ### args
 | arg                | required | default | desc |
 |--------------------|----------|---------| -----|
+| --addTasks         | No       | false | add tasks to package.json |
 | --babelConfig      | No       |       | path to project config options (described below) |
 | --noEslint         | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --eslintConfig     | No       |       | path to project config options (described below) |
@@ -28,7 +29,6 @@ Run `@mparulski/es-project-maker` with passed babel options in config, disable t
 | --webpackDevConfig | No       |       | path to webpack dev config |
 | --webpackProdConfig| No       |       | path to webpack prod config |
 | --noDeps           | No       | false | do not install dependencies |
-| --noTasks          | No       | false | do not tasks to package.json |
 | --verbose          | No       | false | would really be useful to enable end users to diagnose their own issues |
 
 ### project configs
