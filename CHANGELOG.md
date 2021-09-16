@@ -1,4 +1,8 @@
 # CHANGELOG
+
+## 0.12.0
+- feat: upgrade prettier to 2.4.1 (b2c10c7)
+
 ## 0.11.0
 - feat: upgrade @mparulski/es-project-maker-webpack to 0.7.0
 
