@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "@mparulski/es-project-eslint": "0.1.0",
-    "@mparulski/es-project-maker-webpack": "0.7.0",
+    "@mparulski/es-project-maker-webpack": "0.8.0",
     "cross-spawn": "7.0.3",
     "deepmerge": "4.2.2",
     "minimist": "1.2.5",
