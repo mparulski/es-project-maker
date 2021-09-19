@@ -1,8 +1,15 @@
 # CHANGELOG
 
+## 0.14.1
+- fix: inappropriate versions
+
 ## 0.14.0
 - feat: add es-project-maker-to defDependencies in project
 - feat: change global "strict" option in tsconfig to dedicated options
+
+## 0.13.0
+- feat: upgrade @mparulski/es-project-maker-webpack to 0.8.0
+- feat: remove MiniCssExtractPlugin
 
 ## 0.12.0
 - feat: upgrade prettier to 2.4.1 (b2c10c7)
