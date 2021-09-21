@@ -11,6 +11,5 @@ module.exports = {
   plugins: [
     '@babel/plugin-proposal-throw-expressions',
     '@babel/plugin-transform-arrow-functions',
-    '@babel/plugin-transform-modules-commonjs',
   ],
 }

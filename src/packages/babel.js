@@ -16,12 +16,6 @@ module.exports = {
         type: '--save-dev',
       },
     },
-    {
-      '@babel/plugin-transform-modules-commonjs': {
-        version: '7.15.4',
-        type: '--save-dev',
-      },
-    },
     {'babel-loader': {version: '8.2.2', type: '--save-dev'}},
   ],
   react: [{'@babel/preset-react': {version: '7.14.5', type: '--save-dev'}}],

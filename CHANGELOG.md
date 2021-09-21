@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.14.2
+- fix: remove @babel/plugin-transform-modules-commonjs
+- fix: set properly @mparulski/es-project-maker name & version to install
+
 ## 0.14.1
 - fix: inappropriate versions
 
