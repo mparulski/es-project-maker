@@ -1,6 +1,6 @@
 'use strict'
 
-const semver = require('semver')
+const isComparedVersionIsNewerThanInstalled = require('./isComparedVersionIsNewerThanInstalled')
 const addDependencies = require('./addDependencies')
 const logger = require('./logger')
 const readPackageJson = require('./readPackageJson')
@@ -28,7 +28,7 @@ function filterPackagesVersion(packageName, packageDetails, installedPackages) {
 
   const installedPackageVer = installedPackages.get(packageName)
 
-  return semver.gt(packageDetails.version, installedPackageVer)
+  return isComparedVersionIsNewerThanInstalled(packageDetails.version, installedPackageVer)
 }
 
 function prepareListOfPackagesToInstall(packageDetails) {

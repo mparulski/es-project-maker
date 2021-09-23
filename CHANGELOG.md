@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.15.0
+- feat: upgrade @babel/cli: 7.15.4 -> 7.15.7
+- feat: ts-loader: 9.2.5 -> 9.2.6
+- feat: @types/react: 17.0.20 -> 17.0.24
+- feat: webpack-dev-server: 4.2.0 -> 4.2.1
+- fix: remove unnecessary css-loader dependency
+- chore: add updater script
+
 ## 0.14.2
 - fix: remove @babel/plugin-transform-modules-commonjs
 - fix: set properly @mparulski/es-project-maker name & version to install
