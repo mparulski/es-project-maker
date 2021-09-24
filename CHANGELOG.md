@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.16.0
+- feat: upgrade webpack: 5.53.0 -> 5.54.0
+
 ## 0.15.0
 - feat: upgrade @babel/cli: 7.15.4 -> 7.15.7
 - feat: ts-loader: 9.2.5 -> 9.2.6
