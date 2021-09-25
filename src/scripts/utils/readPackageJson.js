@@ -3,8 +3,11 @@
 const path = require('path')
 const readFile = require('./readFile')
 
-function readPackageJson(options) {
-  const packageJsonFile = options.projectRootDir + path.sep + 'package.json'
+function readPackageJson(runtimeOptions) {
+  const packageJsonFile = path.join(
+    runtimeOptions.projectRootDir,
+    'package.json',
+  )
 
   return JSON.parse(readFile(packageJsonFile))
 }

@@ -28,7 +28,10 @@ function filterPackagesVersion(packageName, packageDetails, installedPackages) {
 
   const installedPackageVer = installedPackages.get(packageName)
 
-  return isComparedVersionIsNewerThanInstalled(packageDetails.version, installedPackageVer)
+  return isComparedVersionIsNewerThanInstalled(
+    packageDetails.version,
+    installedPackageVer,
+  )
 }
 
 function prepareListOfPackagesToInstall(packageDetails) {
@@ -41,14 +44,16 @@ function isNotEmpty(arr) {
   return Array.isArray(arr) && arr.length > 0
 }
 
-function manageDependencies(dependencies, options) {
+function manageDependencies(dependencies, args, runtimeOptions) {
   logger.info('Start install dependencies')
 
   const allPackages = dependencies.flatMap(dependency =>
     Object.entries(dependency),
   )
 
-  const installedPackages = getInstalledPackages(readPackageJson(options))
+  const installedPackages = getInstalledPackages(
+    readPackageJson(runtimeOptions),
+  )
 
   const packageTypeProd = prepareListOfPackagesToInstall(
     allPackages
@@ -61,7 +66,7 @@ function manageDependencies(dependencies, options) {
   logger.debug('"dependencies"" to install:', packageTypeProd)
 
   isNotEmpty(packageTypeProd) &&
-    addDependencies(packageTypeProd, '--save-prod', options.verbose)
+    addDependencies(packageTypeProd, '--save-prod', args.verbose)
 
   const packageTypeDev = prepareListOfPackagesToInstall(
     allPackages
@@ -74,7 +79,7 @@ function manageDependencies(dependencies, options) {
   logger.debug('"devDependencies"" to install:', packageTypeDev)
 
   isNotEmpty(packageTypeDev) &&
-    addDependencies(packageTypeDev, '--save-dev', options.verbose)
+    addDependencies(packageTypeDev, '--save-dev', args.verbose)
 
   logger.info('Dependencies was installed')
 }

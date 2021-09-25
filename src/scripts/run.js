@@ -17,7 +17,7 @@ function run(args) {
     ' and runtimeOptions: ' + JSON.stringify(runtimeOptions),
   )
 
-  !noDeps && calculateAndInstallDependencies(args)
+  !noDeps && calculateAndInstallDependencies(args, runtimeOptions)
   calculateConfigs(args, runtimeOptions)
   addTasks && calculateTasks(args, runtimeOptions)
 }

@@ -8,12 +8,12 @@ const getWebpackDependencies = require('./dependencies/getWebpackDependencies')
 const manageDependencies = require('./utils/manageDependencies')
 const logger = require('./utils/logger')
 
-function calculateAndInstallDependencies(args) {
+function calculateAndInstallDependencies(args, runtimeOptions) {
   const dependencies = getDependencies(args)
 
   args.verbose && logger.info('List of dependencies: ', dependencies)
 
-  manageDependencies(dependencies, options)
+  manageDependencies(dependencies, args, runtimeOptions)
 }
 
 function getDependencies(args) {
