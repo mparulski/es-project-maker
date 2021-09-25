@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 0.17.0
+- feat: upgrade webpack-dev-server: 4.2.1 -> 4.3.0
 - chore: refactor & optimise
 
 ## 0.16.0
