@@ -1,6 +1,6 @@
 'use strict'
 
-function getTypescriptDependencies(options) {
+function getTypescriptDependencies() {
   return require('../../packages/typescript').base
 }
 

@@ -1,21 +1,25 @@
 'use strict'
 
 const calculateConfigs = require('./calculateConfigs')
-const calculateDependencies = require('./calculateDependencies')
+const calculateAndInstallDependencies = require('./calculateAndInstallDependencies')
 const calculateTasks = require('./calculateTasks')
 const logger = require('./utils/logger')
 
-function run(options) {
-  options = {
-    ...options,
+function run(args) {
+  const runtimeOptions = {
     projectRootDir: process.cwd(),
   }
 
-  logger.debug('Runtime options:' + JSON.stringify(options))
+  const {addTasks, noDeps} = args
 
-  !options.noDeps && calculateDependencies(options)
-  calculateConfigs(options)
-  options.addTasks && calculateTasks(options)
+  logger.info(
+    'Runtime args:' + JSON.stringify(args),
+    ' and runtimeOptions: ' + JSON.stringify(runtimeOptions),
+  )
+
+  !noDeps && calculateAndInstallDependencies(args)
+  calculateConfigs(args, runtimeOptions)
+  addTasks && calculateTasks(args, runtimeOptions)
 }
 
 module.exports = run

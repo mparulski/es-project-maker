@@ -1,9 +1,9 @@
 'use strict'
 
-function getBabelDependencies(options) {
+function getBabelDependencies({noReact}) {
   let dependencies = require('../../packages/babel').base
 
-  if (!options.noReact) {
+  if (!noReact) {
     dependencies = [...dependencies, ...require('../../packages/babel').react]
   }
 

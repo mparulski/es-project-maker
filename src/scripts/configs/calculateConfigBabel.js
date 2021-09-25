@@ -6,12 +6,13 @@ const touchJSModule = require('../utils/touchJSModule')
 
 const CONFIG_FILENAME = 'babel.config.js'
 
-function calculateConfigBabel(options) {
+function calculateConfigBabel(args, runtimeOptions) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
+  const {noReact, verbose} = args
   let configValues = require('../../config/babel/babel.config')
 
-  if (!options.noReact) {
+  if (!noReact) {
     configValues.presets = [
       ...configValues.presets,
       ...require('../../config/babel/babel-react.config').presets,
@@ -21,10 +22,10 @@ function calculateConfigBabel(options) {
   const content = options.babelConfig(configValues)
 
   const fileContent = touchJSModule(
-    options.projectRootDir + path.sep + CONFIG_FILENAME,
+    path.join(runtimeOptions.projectRootDir, CONFIG_FILENAME),
     content,
   )
-  options.verbose && logger.debug(CONFIG_FILENAME, fileContent)
+  verbose && logger.debug(CONFIG_FILENAME, fileContent)
 
   logger.info(CONFIG_FILENAME + ' was built')
 }

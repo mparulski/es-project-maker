@@ -6,26 +6,27 @@ const touch = require('../utils/touchJSModule')
 
 const CONFIG_FILENAME = 'prettier.config.js'
 
-function calculateConfigPrettier(options) {
+function calculateConfigPrettier(args, runtimeOptions) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
+  const {noReact, prettierConfig, verbose} = args
   let configValues = require('../../config/prettier/base.prettier.config')
 
-  if (!options.noReact) {
+  if (!noReact) {
     configValues = {
       ...configValues,
       ...require('../../config/prettier/react.prettier.config'),
     }
   }
 
-  const content = options.prettierConfig(configValues)
+  const content = prettierConfig(configValues)
 
   const fileContent = touch(
-    options.projectRootDir + path.sep + CONFIG_FILENAME,
+    path.join(runtimeOptions.projectRootDir, CONFIG_FILENAME),
     content,
   )
 
-  options.verbose && logger.debug(CONFIG_FILENAME, fileContent)
+  verbose && logger.debug(CONFIG_FILENAME, fileContent)
 
   logger.info(CONFIG_FILENAME + ' was built')
 }

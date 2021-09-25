@@ -6,20 +6,19 @@ const touchJSON = require('../utils/touchJSON')
 
 const CONFIG_FILENAME = '.eslintrc.json'
 
-function calculateConfigEslint(options) {
+function calculateConfigEslint(args, runtimeOptions) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
-  let configValues = require('../../config/eslint/eslint.config')(
-    !options.noReact,
-  )
+  const {eslintConfig, noReact, verbose} = args
+  let configValues = require('../../config/eslint/eslint.config')(!noReact)
 
-  const content = options.eslintConfig(configValues)
+  const content = eslintConfig(configValues)
 
   const fileContent = touchJSON(
-    options.projectRootDir + path.sep + CONFIG_FILENAME,
+    path.join(runtimeOptions.projectRootDir, CONFIG_FILENAME),
     content,
   )
-  options.verbose && logger.debug(CONFIG_FILENAME, fileContent)
+  verbose && logger.debug(CONFIG_FILENAME, fileContent)
 
   logger.info(CONFIG_FILENAME + ' was built')
 }

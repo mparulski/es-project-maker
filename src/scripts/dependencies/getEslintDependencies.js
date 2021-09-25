@@ -1,6 +1,6 @@
 'use strict'
 
-function getEslintDependencies(options) {
+function getEslintDependencies() {
   return require('../../packages/eslint').base
 }
 

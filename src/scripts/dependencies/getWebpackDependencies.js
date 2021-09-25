@@ -1,6 +1,6 @@
 'use strict'
 
-function getWebpackDependencies(options) {
+function getWebpackDependencies() {
   return require('../../packages/webpack').base
 }
 

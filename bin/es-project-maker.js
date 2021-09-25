@@ -6,7 +6,7 @@ const getConfig = require('../src/scripts/utils/getConfig')
 
 const isTrue = val => val === true
 
-const options = {
+const mappedArgs = {
   addTasks: isTrue(args['addTasks']),
   babelConfig: getConfig(args['babelConfig']),
   eslintConfig: getConfig(args['eslintConfig']),
@@ -22,6 +22,6 @@ const options = {
   verbose: isTrue(args['verbose']),
 }
 
-require('../src/scripts/run')(options)
+require('../src/scripts/run')(mappedArgs)
 
 process.exit(0)

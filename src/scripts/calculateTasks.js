@@ -5,8 +5,11 @@ const merge = require('deepmerge')
 const readFile = require('./utils/readFile')
 const touchJSON = require('./utils/touchJSON')
 
-function calculateTasks(options) {
-  const packageJsonFile = options.projectRootDir + path.sep + 'package.json'
+function calculateTasks(args, runtimeOptions) {
+  const packageJsonFile = path.join(
+    runtimeOptions.projectRootDir,
+    'package.json',
+  )
 
   const scripts = {}
 
@@ -14,7 +17,7 @@ function calculateTasks(options) {
 
   scripts['build:ts'] = 'tsc'
 
-  if (!options.noWebpack) {
+  if (!args.noWebpack) {
     scripts.start = 'webpack serve --config=webpack.dev.config.js'
     scripts['build:webpack'] = 'webpack --config=webpack.prod.config.js'
   }

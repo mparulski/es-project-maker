@@ -8,44 +8,50 @@ const webpackConfigBuilder = require('../../config/webpack/webpackConfigBuilder'
 const CONFIG_DEV_FILENAME = 'webpack.dev.config.js'
 const CONFIG_PROD_FILENAME = 'webpack.prod.config.js'
 
-const calculateDevConfigWebpack = options => {
+const calculateDevConfigWebpack = (args, runtimeOptions) => {
   const webpackConfig = webpackConfigBuilder(
     '@mparulski/es-project-maker-webpack/config/webpack.dev.config',
   )
 
   const propsAndHelpers = {
     configFilename: CONFIG_DEV_FILENAME,
-    configContent: webpackConfig(options.webpackDevConfig),
-    options,
+    configContent: webpackConfig(args.webpackDevConfig),
+    ...args,
+    ...runtimeOptions,
   }
 
   calculateConfigFile(propsAndHelpers)
 }
 
-const calculateProdConfigWebpack = options => {
+const calculateProdConfigWebpack = (args, runtimeOptions) => {
   const webpackConfig = webpackConfigBuilder(
     '@mparulski/es-project-maker-webpack/config/webpack.prod.config',
   )
 
   const propsAndHelpers = {
     configFilename: CONFIG_PROD_FILENAME,
-    configContent: webpackConfig(options.webpackProdConfig),
-    options,
+    configContent: webpackConfig(args.webpackProdConfig),
+    ...args,
+    ...runtimeOptions,
   }
 
   calculateConfigFile(propsAndHelpers)
 }
 
-const calculateConfigFile = ({configFilename, configContent, options}) => {
+const calculateConfigFile = ({
+  configFilename,
+  configContent,
+  projectRootDir,
+  verbose,
+}) => {
   logger.info('Start building the ' + configFilename)
 
-  const file = options.projectRootDir + path.sep + configFilename
-  const content = touch({
-    file,
+  touch({
+    file: path.join(projectRootDir, configFilename),
     content: configContent,
   })
 
-  options.verbose && logger.debug(configFilename, content)
+  verbose && logger.debug(configFilename, configContent)
 
   logger.info(configFilename + ' was built')
 }

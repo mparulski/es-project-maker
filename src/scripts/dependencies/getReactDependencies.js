@@ -1,6 +1,6 @@
 'use strict'
 
-function getReactDependencies(options) {
+function getReactDependencies() {
   return require('../../packages/react').base
 }
 

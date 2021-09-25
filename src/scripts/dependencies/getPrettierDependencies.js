@@ -1,6 +1,6 @@
 'use strict'
 
-function getPrettierDependencies(options) {
+function getPrettierDependencies() {
   return require('../../packages/prettier').base
 }
 

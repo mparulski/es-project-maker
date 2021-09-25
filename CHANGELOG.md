@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.17.0
+- chore: refactor & optimise
+
 ## 0.16.0
 - feat: upgrade webpack: 5.53.0 -> 5.54.0
 
