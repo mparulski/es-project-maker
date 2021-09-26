@@ -3,6 +3,7 @@
 const getBabelDependencies = require('./dependencies/getBabelDependencies')
 const getEslintDependencies = require('./dependencies/getEslintDependencies')
 const getPrettierDependencies = require('./dependencies/getPrettierDependencies')
+const getEsProjectMakerDependencies = require('./dependencies/getEsProjectMakerDependencies')
 const getTypescriptDependencies = require('./dependencies/getTypescriptDependencies')
 const getWebpackDependencies = require('./dependencies/getWebpackDependencies')
 const manageDependencies = require('./utils/manageDependencies')
@@ -23,6 +24,7 @@ function getDependencies(args) {
     ...getBabelDependencies({noReact}),
     ...(!noEslint ? getEslintDependencies() : []),
     ...(!noPrettier ? getPrettierDependencies() : []),
+    ...getEsProjectMakerDependencies(),
     ...getTypescriptDependencies(),
     ...(!noWebpack ? getWebpackDependencies() : []),
     ...(!noReact ? require('./dependencies/getReactDependencies')() : []),

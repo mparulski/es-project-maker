@@ -15,17 +15,13 @@ function calculateConfigTypescript(args, runtimeOptions) {
   if (!noReact) {
     configValues.compilerOptions = {
       ...configValues.compilerOptions,
-      ...require('../../config/typescript/react.typescript.config')
-        .compilerOptions,
+      ...require('../../config/typescript/react.typescript.config').compilerOptions,
     }
   }
 
   const content = typescriptConfig(configValues)
 
-  const fileContent = touch(
-    runtimeOptions.projectRootDir + path.sep + CONFIG_FILENAME,
-    content,
-  )
+  const fileContent = touch(path.join(runtimeOptions.projectRootDir, CONFIG_FILENAME), content)
 
   verbose && logger.debug(CONFIG_FILENAME, fileContent)
 

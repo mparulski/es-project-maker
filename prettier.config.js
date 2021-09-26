@@ -1,11 +1,12 @@
 module.exports = {
   arrowParens: 'avoid',
+  bracketSameLine: false,
   bracketSpacing: false,
   embeddedLanguageFormatting: 'auto',
   endOfLine: 'lf',
   htmlWhitespaceSensitivity: 'css',
   insertPragma: false,
-  printWidth: 80,
+  printWidth: 120,
   proseWrap: 'always',
   quoteProps: 'as-needed',
   requirePragma: false,
@@ -14,4 +15,5 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'all',
   useTabs: false,
+  jsxSingleQuote: false,
 }
