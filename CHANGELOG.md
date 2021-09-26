@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.17.2
+- fix: add es-project-maker to deps
+
 ## 0.17.1
 - fix: invalid function call
 
