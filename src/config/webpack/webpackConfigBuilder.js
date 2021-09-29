@@ -13,8 +13,20 @@ const webpackConfigBuilder = makerConfigPath => relativeConfigPath => {
 'use strict';
 
 const path = require('path');
-const {merge} = require("webpack-merge");
-module.exports = env => merge(
+const {mergeWithRules} = require("webpack-merge");
+
+const rules = {
+  module: {
+      rules: {
+          test: "match",
+          use: "replace",
+          exclude: "replace",
+          include: "replace",
+      },
+  },
+}
+
+module.exports = env => mergeWithRules(rules)(
     require("${makerConfigPath}"), 
     ${projectConfig})`
 }

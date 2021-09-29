@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.18.0
+- feat: change webpack config builder
+
 ## 0.17.2
 - fix: add es-project-maker to deps
 
