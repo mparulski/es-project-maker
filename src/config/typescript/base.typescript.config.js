@@ -28,7 +28,6 @@ module.exports = {
     strictNullChecks: true,
     strictPropertyInitialization: true,
     target: 'esnext',
-    typeRoots: ['./dist/types'],
     useUnknownInCatchVariables: true,
   },
   include: ['src'],
