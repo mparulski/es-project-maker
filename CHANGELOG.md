@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## 0.19.1
+- fix: add missing react-typescript dependencies
+
+## 0.19.1
 - fix: add missed moduleResolution option in tsconfig
 
 ## 0.19.0
