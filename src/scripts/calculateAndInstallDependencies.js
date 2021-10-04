@@ -25,7 +25,7 @@ function getDependencies(args) {
     ...(!noEslint ? getEslintDependencies() : []),
     ...(!noPrettier ? getPrettierDependencies() : []),
     ...getEsProjectMakerDependencies(),
-    ...getTypescriptDependencies(),
+    ...getTypescriptDependencies({noReact}),
     ...(!noWebpack ? getWebpackDependencies() : []),
     ...(!noReact ? require('./dependencies/getReactDependencies')() : []),
   ]

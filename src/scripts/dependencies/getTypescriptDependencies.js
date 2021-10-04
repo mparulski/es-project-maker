@@ -2,7 +2,7 @@
 
 const {base: dependencies} = require('../../packages/babel')
 
-function getTypescriptDependencies() {
+function getTypescriptDependencies({noReact}) {
   let dependencies = require('../../packages/typescript').base
 
   if (!noReact) {

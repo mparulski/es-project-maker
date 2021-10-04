@@ -1,6 +1,9 @@
 # CHANGELOG
 
-## 0.19.1
+## 0.19.3
+- fix: add missing react-typescript dependencies
+
+## 0.19.2
 - fix: add missing react-typescript dependencies
 
 ## 0.19.1
