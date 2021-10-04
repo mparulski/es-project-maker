@@ -16,7 +16,7 @@ module.exports = {
   react: [
     {
       '@types/react': {
-        version: '17.0.24',
+        version: '17.0.27',
         type: '--save-dev',
       },
     },

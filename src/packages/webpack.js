@@ -2,7 +2,7 @@ module.exports = {
   base: [
     {
       webpack: {
-        version: '5.54.0',
+        version: '5.56.1',
         type: '--save-dev',
       },
     },
@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       'webpack-dev-server': {
-        version: '4.3.0',
+        version: '4.3.1',
         type: '--save-dev',
       },
     },
