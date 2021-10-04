@@ -11,6 +11,7 @@ module.exports = {
     isolatedModules: false,
     lib: ['dom', 'dom.iterable', 'esnext'],
     module: 'esnext',
+    moduleResolution: 'node',
     noEmit: false,
     noEmitOnError: true,
     noFallthroughCasesInSwitch: true,

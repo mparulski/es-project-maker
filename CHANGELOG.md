@@ -1,11 +1,13 @@
 # CHANGELOG
 
+## 0.19.1
+- fix: add missed moduleResolution option in tsconfig
+
 ## 0.19.0
 - feat: @types/react: 17.0.24 -> 17.0.27
 - feat: webpack: 5.54.0 -> 5.56.1
 - feat: webpack-dev-server: 4.3.0 -> 4.3.1
 - fix: add @types/react-dom dependency
-- fix: add missed moduleResolution option in tsconfig
 
 ## 0.18.1
 - fix: remove typeRoots option from typescript config
