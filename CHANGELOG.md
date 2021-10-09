@@ -1,6 +1,10 @@
 # CHANGELOG
 
-##
+## 0.20.0
+- feat: @babel/core: 7.15.5 -> 7.15.8
+- feat: @babel/preset-env: 7.15.6 -> 7.15.8
+- feat: webpack: 5.56.1 -> 5.58.1
+- feat: webpack-cli: 4.8.0 -> 4.9.0
 - fix: remove moduleResolution option in tsconfig
 
 ## 0.19.3

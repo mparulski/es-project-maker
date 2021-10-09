@@ -8,13 +8,13 @@ module.exports = {
     },
     {
       '@babel/core': {
-        version: '7.15.5',
+        version: '7.15.8',
         type: '--save-dev',
       },
     },
     {
       '@babel/preset-env': {
-        version: '7.15.6',
+        version: '7.15.8',
         type: '--save-dev',
       },
     },
