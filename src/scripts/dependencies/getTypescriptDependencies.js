@@ -1,10 +1,10 @@
 'use strict'
 
 function getTypescriptDependencies({noReact}) {
-  let dependencies = require('../../packages/typescript').base
+  let dependencies = require('../../packages/tests').base
 
   if (!noReact) {
-    dependencies = [...dependencies, ...require('../../packages/typescript').react]
+    dependencies = [...dependencies, ...require('../../packages/tests').react]
   }
 
   return dependencies

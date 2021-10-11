@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.21.1
+- fix: omit adding jest deps
+
 ## 0.21.0
 - feat: add jest configuration
 - feat: jest: 27.2.5
