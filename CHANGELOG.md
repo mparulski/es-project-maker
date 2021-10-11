@@ -6,6 +6,7 @@
 - feat: babel-jest: 27.2.5
 - feat: ts-jest: 27.0.5
 - feat: @types/jest: 27.0.2
+- feat: @babel/plugin-transform-runtime: 7.15.8
 
 ## 0.20.0
 - feat: @babel/core: 7.15.5 -> 7.15.8

@@ -37,6 +37,12 @@ module.exports = {
       },
     },
     {
+      '@babel/plugin-transform-runtime': {
+        version: '7.15.8',
+        type: '--save-dev',
+      },
+    },
+    {
       'babel-loader': {
         version: '8.2.2',
         type: '--save-dev',
