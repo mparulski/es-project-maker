@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.21.0
+- feat: add jest configuration
+- feat: jest: 27.2.5
+- feat: babel-jest: 27.2.5
+- feat: ts-jest: 27.0.5
+- feat: @types/jest: 27.0.2
+
 ## 0.20.0
 - feat: @babel/core: 7.15.5 -> 7.15.8
 - feat: @babel/preset-env: 7.15.6 -> 7.15.8

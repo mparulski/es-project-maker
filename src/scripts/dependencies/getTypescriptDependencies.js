@@ -1,7 +1,5 @@
 'use strict'
 
-const {base: dependencies} = require('../../packages/babel')
-
 function getTypescriptDependencies({noReact}) {
   let dependencies = require('../../packages/typescript').base
 

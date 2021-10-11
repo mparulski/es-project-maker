@@ -4,6 +4,7 @@ const getBabelDependencies = require('./dependencies/getBabelDependencies')
 const getEslintDependencies = require('./dependencies/getEslintDependencies')
 const getPrettierDependencies = require('./dependencies/getPrettierDependencies')
 const getEsProjectMakerDependencies = require('./dependencies/getEsProjectMakerDependencies')
+const getTestsDependencies = require('./dependencies/getTypescriptDependencies')
 const getTypescriptDependencies = require('./dependencies/getTypescriptDependencies')
 const getWebpackDependencies = require('./dependencies/getWebpackDependencies')
 const manageDependencies = require('./utils/manageDependencies')
@@ -18,7 +19,7 @@ function calculateAndInstallDependencies(args, runtimeOptions) {
 }
 
 function getDependencies(args) {
-  const {noEslint, noPrettier, noReact, noWebpack} = args
+  const {noEslint, noPrettier, noReact, noTests, noWebpack} = args
 
   return [
     ...getBabelDependencies({noReact}),
@@ -27,6 +28,7 @@ function getDependencies(args) {
     ...getEsProjectMakerDependencies(),
     ...getTypescriptDependencies({noReact}),
     ...(!noWebpack ? getWebpackDependencies() : []),
+    ...(!noTests ? getTestsDependencies({noReact}) : []),
     ...(!noReact ? require('./dependencies/getReactDependencies')() : []),
   ]
 }

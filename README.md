@@ -24,6 +24,8 @@ Run `@mparulski/es-project-maker` with passed babel options in config, disable t
 | --noPrettier       | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --prettierConfig   | No       |       | path to project config options (described below) |
 | --noReact          | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
+| --noTests          | No       | false | if it is set then do not generate the configuration file and do not install dependencies for jest, testing-library, etc.|
+| --jestConfig       | No       |       | path to project config options (described below) |
 | --typescriptConfig | No       |       | path to project config options (described below) |
 | --noWebpack        | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
 | --webpackDevConfig | No       |       | path to webpack dev config |

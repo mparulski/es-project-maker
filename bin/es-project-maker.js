@@ -18,6 +18,8 @@ const mappedArgs = {
   noEslint: isTrue(args['noEslint']),
   noPrettier: isTrue(args['noPrettier']),
   noReact: isTrue(args['noReact']),
+  noTests: isTrue(args['noTests']),
+  jestConfig: getConfig(args['jestConfig']),
   noWebpack: isTrue(args['noWebpack']),
   verbose: isTrue(args['verbose']),
 }
