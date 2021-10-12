@@ -2,7 +2,7 @@ module.exports = {
   base: [
     {
       typescript: {
-        version: '4.4.3',
+        version: '4.4.4',
         type: '--save-dev',
       },
     },
@@ -16,7 +16,7 @@ module.exports = {
   react: [
     {
       '@types/react': {
-        version: '17.0.27',
+        version: '17.0.29',
         type: '--save-dev',
       },
     },

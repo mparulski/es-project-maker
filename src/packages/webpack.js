@@ -25,12 +25,6 @@ module.exports = {
       },
     },
     {
-      'sass-loader': {
-        version: '12.1.0',
-        type: '--save-dev',
-      },
-    },
-    {
       'resolve-url-loader': {
         version: '4.0.0',
         type: '--save-dev',

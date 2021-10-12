@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.22.0
+- feat: typescript: 4.4.3 -> 4.4.4
+- feat: @types/react: 17.0.27 -> 17.0.29
+- feat: eslint: 7.32.0 -> 8.0.0
+
 ## 0.21.1
 - fix: omit adding jest deps
 
