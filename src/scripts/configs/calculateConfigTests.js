@@ -2,7 +2,7 @@
 
 const logger = require('../utils/logger')
 const path = require('path')
-const touch = require('../utils/touchJSON')
+const touch = require('../utils/touchJSModule')
 
 const CONFIG_FILENAME = 'jest.config.js'
 
