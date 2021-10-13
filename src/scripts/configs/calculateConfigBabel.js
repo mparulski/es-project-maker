@@ -9,11 +9,15 @@ const CONFIG_FILENAME = 'babel.config.js'
 function calculateConfigBabel(args, runtimeOptions) {
   logger.info('Start building the ' + CONFIG_FILENAME)
 
-  const {babelConfig, noReact, noWebpack, verbose} = args
-  let configValues = require('../../config/babel/babel.config')({noWebpack})
+  const {babelConfig, noReact, noTests, noWebpack, verbose} = args
+  let configValues = require('../../config/babel/babel.config')({noTests, noWebpack})
 
   if (!noReact) {
     configValues.presets = [...configValues.presets, ...require('../../config/babel/react.babel.config').presets]
+    configValues.env.test.presets = [
+      ...configValues.env.test.presets,
+      ...require('../../config/babel/react.babel.config').presets,
+    ]
   }
 
   const content = babelConfig(configValues)

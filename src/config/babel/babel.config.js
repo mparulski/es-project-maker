@@ -1,14 +1,14 @@
 'use strict'
 
-function getBabelConfig({noWebpack}) {
-  const isModules = noWebpack ? true : false
+function getBabelConfig({noTests, noWebpack}) {
+  const modules = !noWebpack ? false : undefined
 
-  return {
+  let config = {
     presets: [
       [
         '@babel/preset-env',
         {
-          modules: (String(process.env.NODE_ENV) === 'test' ? 'commonjs' : isModules),
+          modules: String(process.env.NODE_ENV) === 'test' ? 'commonjs' : modules,
           targets: {browsers: 'cover 99.5%, last 3 versions, not ie 11'},
         },
       ],
@@ -19,6 +19,30 @@ function getBabelConfig({noWebpack}) {
       '@babel/plugin-transform-runtime',
     ],
   }
+
+  if (!noTests) {
+    const testEnvConfig = {
+      env: {
+        test: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                modules: 'commonjs',
+              },
+            ],
+          ],
+        },
+      },
+    }
+
+    config = {
+      ...config,
+      ...testEnvConfig,
+    }
+  }
+
+  return config
 }
 
 module.exports = getBabelConfig
