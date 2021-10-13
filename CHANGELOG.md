@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.22.2
+- fix: jest configuration
+
+## 0.22.2
+- fix: jest configuration
+
+## 0.22.1
+- fix: incorrect jest.config content
+
 ## 0.22.0
 - feat: typescript: 4.4.3 -> 4.4.4
 - feat: @types/react: 17.0.27 -> 17.0.29
