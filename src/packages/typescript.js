@@ -16,13 +16,13 @@ module.exports = {
   react: [
     {
       '@types/react': {
-        version: '17.0.29',
+        version: '17.0.32',
         type: '--save-dev',
       },
     },
     {
       '@types/react-dom': {
-        version: '17.0.9',
+        version: '17.0.10',
         type: '--save-dev',
       },
     },

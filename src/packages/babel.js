@@ -44,7 +44,7 @@ module.exports = {
     },
     {
       'babel-loader': {
-        version: '8.2.2',
+        version: '8.2.3',
         type: '--save-dev',
       },
     },

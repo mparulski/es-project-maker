@@ -2,7 +2,7 @@ module.exports = {
   base: [
     {
       webpack: {
-        version: '5.58.1',
+        version: '5.60.0',
         type: '--save-dev',
       },
     },
@@ -14,7 +14,7 @@ module.exports = {
     },
     {
       'webpack-cli': {
-        version: '4.9.0',
+        version: '4.9.1',
         type: '--save-dev',
       },
     },

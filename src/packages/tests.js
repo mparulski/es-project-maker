@@ -2,19 +2,19 @@ module.exports = {
   base: [
     {
       jest: {
-        version: '27.2.5',
+        version: '27.3.1',
         type: '--save-dev',
       },
     },
     {
       'babel-jest': {
-        version: '27.2.5',
+        version: '27.3.1',
         type: '--save-dev',
       },
     },
     {
       'ts-jest': {
-        version: '27.0.5',
+        version: '27.0.7',
         type: '--save-dev',
       },
     },

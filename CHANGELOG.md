@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.23.0
+- feat: eslint: 8.0.0 -> 8.1.0
+- feat: babel-loader: 8.2.2 -> 8.2.3
+- feat: jest: 27.2.5 -> 27.3.1
+- feat: ts-jest: 27.0.5 -> 27.0.7
+- feat: @types/react: 17.0.29 -> 17.0.32
+- feat: @types/react-dom: 17.0.9 -> 17.0.10
+- feat: webpack: 5.58.1 -> 5.60.0
+- feat: webpack-cli: 4.9.0 -> 4.9.1
+
 ## 0.22.2
 - fix: jest configuration
 
