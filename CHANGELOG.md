@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.24.0
+- feat: @types/react: 17.0.32 -> 17.0.33
+
 ## 0.23.0
 - feat: eslint: 8.0.0 -> 8.1.0
 - feat: babel-loader: 8.2.2 -> 8.2.3
