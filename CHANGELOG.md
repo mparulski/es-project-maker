@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.25.0
+- feat: webpack-dev-server: 4.3.1 -> 4.4.0
+
 ## 0.24.0
 - feat: @types/react: 17.0.32 -> 17.0.33
 
