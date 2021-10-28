@@ -24,6 +24,12 @@ module.exports = {
         type: '--save-dev',
       },
     },
+    {
+      '@testing-library/react': {
+        version: '12.1.2',
+        type: '--save-dev',
+      },
+    },
   ],
   react: [],
 }
