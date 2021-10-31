@@ -2,43 +2,43 @@ module.exports = {
   base: [
     {
       '@babel/cli': {
-        version: '7.15.7',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },
     {
       '@babel/core': {
-        version: '7.15.8',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },
     {
       '@babel/preset-env': {
-        version: '7.15.8',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },
     {
       '@babel/runtime': {
-        version: '7.15.4',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },
     {
       '@babel/plugin-proposal-throw-expressions': {
-        version: '7.14.5',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },
     {
       '@babel/plugin-transform-arrow-functions': {
-        version: '7.14.5',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },
     {
       '@babel/plugin-transform-runtime': {
-        version: '7.15.8',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },
@@ -52,7 +52,7 @@ module.exports = {
   react: [
     {
       '@babel/preset-react': {
-        version: '7.14.5',
+        version: '7.16.0',
         type: '--save-dev',
       },
     },

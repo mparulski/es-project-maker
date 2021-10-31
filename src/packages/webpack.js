@@ -2,7 +2,7 @@ module.exports = {
   base: [
     {
       webpack: {
-        version: '5.60.0',
+        version: '5.61.0',
         type: '--save-dev',
       },
     },
