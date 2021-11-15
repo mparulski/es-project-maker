@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       '@babel/runtime': {
-        version: '7.16.0',
+        version: '7.16.3',
         type: '--save-dev',
       },
     },

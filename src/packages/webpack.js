@@ -2,7 +2,13 @@ module.exports = {
   base: [
     {
       webpack: {
-        version: '5.61.0',
+        version: '5.64.1',
+        type: '--save-dev',
+      },
+    },
+    {
+      'webpack-bundle-analyzer': {
+        version: '4.5.0',
         type: '--save-dev',
       },
     },
@@ -20,7 +26,7 @@ module.exports = {
     },
     {
       'webpack-dev-server': {
-        version: '4.4.0',
+        version: '4.5.0',
         type: '--save-dev',
       },
     },
@@ -32,7 +38,7 @@ module.exports = {
     },
     {
       '@mparulski/es-project-maker-webpack': {
-        version: '0.8.0',
+        version: '0.9.0',
         type: '--save-dev',
       },
     },

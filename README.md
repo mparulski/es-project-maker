@@ -115,5 +115,9 @@ Run npm script "start"
 ### webpack production build
 Run npm script "build" 
 
+### webpack enableBundleAnalyzer
+Ypu can run [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) via command
+`npm webpack:build --enableBundleAnalyzer`
+
 ## Inspired 
 This is inspired by `react-scripts` and `kcd-scripts`
