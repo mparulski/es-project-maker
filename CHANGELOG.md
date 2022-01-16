@@ -1,5 +1,50 @@
 # CHANGELOG
 
+## 0.29.0
+- feat: @babel/cli: 7.16.0 -> 7.16.8
+- feat: @babel/core: 7.16.0 -> 7.16.7
+- feat: @babel/preset-env: 7.16.0 -> 7.16.8
+- feat: @babel/runtime: 7.16.3 -> 7.16.7
+- feat: @babel/plugin-proposal-throw-expressions: 7.16.0 -> 7.16.7
+- feat: @babel/plugin-transform-arrow-functions: 7.16.0 -> 7.16.7
+- feat: @babel/plugin-transform-runtime: 7.16.0 -> 7.16.8
+- feat: @babel/preset-react: 7.16.0 -> 7.16.7
+- feat: eslint: 8.2.0 -> 8.7.0
+- feat: prettier: 2.4.1 -> 2.5.1
+- feat: jest: 27.3.1 -> 27.4.7
+- feat: babel-jest: 27.3.1 -> 27.4.6
+- feat: ts-jest: 27.0.7 -> 27.1.3
+- feat: @types/jest: 27.0.2 -> 27.4.0
+- feat: typescript: 4.4.4 -> 4.5.4
+- feat: @types/react: 17.0.34 -> 17.0.38
+- feat: webpack: 5.64.1 -> 5.66.0
+- feat: webpack-dev-server: 4.5.0 -> 4.7.3
+
+## 0.28.0
+- feat: add webpack-bundle-analyzer 4.5.0
+- feat: upgrade @babel/runtime: 7.16.0 -> 7.16.3
+- feat: upgrade @mparulski/es-project-maker-webpack 0.8.0 -> 0.9.0
+- feat: upgrade eslint: 8.1.0 -> 8.2.0
+- feat: upgrade @types/react: 17.0.33 -> 17.0.34
+- feat: upgrade @types/react-dom: 17.0.10 -> 17.0.11
+- feat: upgrade webpack: 5.61.0 -> 5.64.1
+- feat: upgrade webpack-dev-server: 4.4.0 -> 4.5.0
+- internal: reformat updater logs
+
+## 0.27.0
+- feat: @babel/cli: 7.15.7 -> 7.16.0
+- feat: @babel/core: 7.15.8 -> 7.16.0
+- feat: @babel/preset-env: 7.15.8 -> 7.16.0
+- feat: @babel/runtime: 7.15.4 -> 7.16.0
+- feat: @babel/plugin-proposal-throw-expressions: 7.14.5 -> 7.16.0
+- feat: @babel/plugin-transform-arrow-functions: 7.14.5 -> 7.16.0
+- feat: @babel/plugin-transform-runtime: 7.15.8 -> 7.16.0
+- feat: @babel/preset-react: 7.14.5 -> 7.16.0
+- feat: webpack: 5.60.0 -> 5.61.0
+
+## 0.26.1
+- fix: upgrade @mparulski/es-project-maker to 0.26.1
+
 ## 0.25.0
 - feat: webpack-dev-server: 4.3.1 -> 4.4.0
 

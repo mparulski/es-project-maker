@@ -1,16 +1,16 @@
 module.exports = {
-  base: [
+  "base": [
     {
-      '@mparulski/es-project-eslint': {
-        version: '0.1.0',
-        type: '--save-dev',
-      },
+      "@mparulski/es-project-eslint": {
+        "version": "0.1.0",
+        "type": "--save-dev"
+      }
     },
     {
-      eslint: {
-        version: '8.2.0',
-        type: '--save-dev',
-      },
-    },
-  ],
+      "eslint": {
+        "version": "8.7.0",
+        "type": "--save-dev"
+      }
+    }
+  ]
 }

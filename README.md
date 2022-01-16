@@ -15,23 +15,23 @@ npx @mparulski/es-project-maker --babelConfig=<secial_babel_options_config.js> -
 Run `@mparulski/es-project-maker` with passed babel options in config, disable typescript and run verbose mode
 
 ### args
-| arg                | required | default | desc |
-|--------------------|----------|---------| -----|
-| --addTasks         | No       | false | add tasks to package.json |
-| --babelConfig      | No       |       | path to project config options (described below) |
-| --noEslint         | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
-| --eslintConfig     | No       |       | path to project config options (described below) |
-| --noPrettier       | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
-| --prettierConfig   | No       |       | path to project config options (described below) |
-| --noReact          | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
-| --noTests          | No       | false | if it is set then do not generate the configuration file and do not install dependencies for jest, testing-library, etc.|
-| --jestConfig       | No       |       | path to project config options (described below) |
-| --typescriptConfig | No       |       | path to project config options (described below) |
-| --noWebpack        | No       | false | if it is set then do not generate the configuration file and do not install dependencies |
-| --webpackDevConfig | No       |       | path to webpack dev config |
-| --webpackProdConfig| No       |       | path to webpack prod config |
-| --noDeps           | No       | false | do not install dependencies |
-| --verbose          | No       | false | would really be useful to enable end users to diagnose their own issues |
+| arg                 | required | default | desc                                                                                                                     |
+|---------------------|----------|---------|--------------------------------------------------------------------------------------------------------------------------|
+| --addTasks          | No       | false   | add tasks to package.json                                                                                                |
+| --babelConfig       | No       |         | path to project config options (described below)                                                                         |
+| --noEslint          | No       | false   | if it is set then do not generate the configuration file and do not install dependencies                                 |
+| --eslintConfig      | No       |         | path to project config options (described below)                                                                         |
+| --noPrettier        | No       | false   | if it is set then do not generate the configuration file and do not install dependencies                                 |
+| --prettierConfig    | No       |         | path to project config options (described below)                                                                         |
+| --noReact           | No       | false   | if it is set then do not generate the configuration file and do not install dependencies                                 |
+| --noTests           | No       | false   | if it is set then do not generate the configuration file and do not install dependencies for jest, testing-library, etc. |
+| --jestConfig        | No       |         | path to project config options (described below)                                                                         |
+| --typescriptConfig  | No       |         | path to project config options (described below)                                                                         |
+| --noWebpack         | No       | false   | if it is set then do not generate the configuration file and do not install dependencies                                 |
+| --webpackDevConfig  | No       |         | path to webpack dev config                                                                                               |
+| --webpackProdConfig | No       |         | path to webpack prod config                                                                                              |
+| --noDeps            | No       | false   | do not install dependencies                                                                                              |
+| --verbose           | No       | false   | would really be useful to enable end users to diagnose their own issues                                                  |
 
 ### project configs
 

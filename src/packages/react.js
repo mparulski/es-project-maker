@@ -1,16 +1,16 @@
 module.exports = {
-  base: [
+  "base": [
     {
-      react: {
-        version: '17.0.2',
-        type: '--save',
-      },
+      "react": {
+        "version": "17.0.2",
+        "type": "--save"
+      }
     },
     {
-      'react-dom': {
-        version: '17.0.2',
-        type: '--save',
-      },
-    },
-  ],
+      "react-dom": {
+        "version": "17.0.2",
+        "type": "--save"
+      }
+    }
+  ]
 }
