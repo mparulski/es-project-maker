@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.30.0
+- feat: @babel/core: 7.16.7 -> 7.16.10
+- feat: @babel/preset-env: 7.16.8 -> 7.16.10
+- feat: @babel/plugin-transform-runtime: 7.16.8 -> 7.16.10
+- feat: resolve-url-loader: 4.0.0 -> 5.0.0
+
 ## 0.29.0
 - feat: @babel/cli: 7.16.0 -> 7.16.8
 - feat: @babel/core: 7.16.0 -> 7.16.7

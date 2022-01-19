@@ -8,13 +8,13 @@ module.exports = {
     },
     {
       "@babel/core": {
-        "version": "7.16.7",
+        "version": "7.16.10",
         "type": "--save-dev"
       }
     },
     {
       "@babel/preset-env": {
-        "version": "7.16.8",
+        "version": "7.16.10",
         "type": "--save-dev"
       }
     },
@@ -38,7 +38,7 @@ module.exports = {
     },
     {
       "@babel/plugin-transform-runtime": {
-        "version": "7.16.8",
+        "version": "7.16.10",
         "type": "--save-dev"
       }
     },

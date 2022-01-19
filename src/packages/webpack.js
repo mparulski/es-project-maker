@@ -32,7 +32,7 @@ module.exports = {
     },
     {
       "resolve-url-loader": {
-        "version": "4.0.0",
+        "version": "5.0.0",
         "type": "--save-dev"
       }
     },
