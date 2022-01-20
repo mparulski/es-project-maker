@@ -14,7 +14,7 @@ module.exports = {
     },
     {
       "@babel/preset-env": {
-        "version": "7.16.10",
+        "version": "7.16.11",
         "type": "--save-dev"
       }
     },

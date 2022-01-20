@@ -2,7 +2,7 @@ module.exports = {
   "base": [
     {
       "typescript": {
-        "version": "4.5.4",
+        "version": "4.5.5",
         "type": "--save-dev"
       }
     },
