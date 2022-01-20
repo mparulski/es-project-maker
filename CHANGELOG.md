@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.31.1
+- fix: set mparulski/es-project-maker version
+
 ## 0.31.0
 - feat: @babel/preset-env: 7.16.10 -> 7.16.11
 - feat: typescript: 4.5.4 -> 4.5.5
